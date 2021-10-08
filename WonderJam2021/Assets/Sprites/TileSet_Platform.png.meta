@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21303c9c69ceeb44eab60fd7a3882811
+guid: aba86ff8762adab4c8edfb97a54fe60e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -77,6 +77,24 @@ TextureImporter:
   - first:
       213: -1143916026975397240
     second: TileSet_Platform_24
+  - first:
+      213: -2502519102823217567
+    second: TileSet_Platform_25
+  - first:
+      213: -4739178150668189093
+    second: TileSet_Platform_26
+  - first:
+      213: 5700866255995051282
+    second: TileSet_Platform_27
+  - first:
+      213: -7093532325284213923
+    second: TileSet_Platform_28
+  - first:
+      213: 7228687760852654963
+    second: TileSet_Platform_29
+  - first:
+      213: 440444722449258019
+    second: TileSet_Platform_30
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -526,7 +544,7 @@ TextureImporter:
       name: TileSet_Platform_17
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 32
         width: 16
         height: 16
@@ -547,7 +565,7 @@ TextureImporter:
       name: TileSet_Platform_18
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 32
         width: 16
         height: 16
@@ -568,7 +586,7 @@ TextureImporter:
       name: TileSet_Platform_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 32
         width: 16
         height: 16
@@ -589,7 +607,7 @@ TextureImporter:
       name: TileSet_Platform_20
       rect:
         serializedVersion: 2
-        x: 80
+        x: 112
         y: 32
         width: 16
         height: 16
@@ -610,7 +628,7 @@ TextureImporter:
       name: TileSet_Platform_21
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 16
         width: 16
         height: 16
@@ -631,7 +649,7 @@ TextureImporter:
       name: TileSet_Platform_22
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 16
         width: 16
         height: 16
@@ -652,7 +670,7 @@ TextureImporter:
       name: TileSet_Platform_23
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 16
         width: 16
         height: 16
@@ -673,7 +691,7 @@ TextureImporter:
       name: TileSet_Platform_24
       rect:
         serializedVersion: 2
-        x: 80
+        x: 64
         y: 16
         width: 16
         height: 16
@@ -686,6 +704,132 @@ TextureImporter:
       bones: []
       spriteID: 88a51472f6eff10f0800000000000000
       internalID: -1143916026975397240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Platform_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166c7988224454dd0800000000000000
+      internalID: -2502519102823217567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Platform_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52412ac49e0b3eb0800000000000000
+      internalID: -4739178150668189093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Platform_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d9894c7ab8d1f40800000000000000
+      internalID: 5700866255995051282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Platform_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b0faceee5be8d90800000000000000
+      internalID: -7093532325284213923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Platform_29
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b16d12835715460800000000000000
+      internalID: 7228687760852654963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Platform_30
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32698c83426cc1600800000000000000
+      internalID: 440444722449258019
       vertices: []
       indices: 
       edges: []
