@@ -57,3 +57,6 @@ TagManager:
   - name: Ghost
     uniqueID: 479072383
     locked: 0
+  - name: DecorsFront
+    uniqueID: 1668434833
+    locked: 0
