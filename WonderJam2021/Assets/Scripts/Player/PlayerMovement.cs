@@ -54,9 +54,9 @@ public class PlayerMovement : MonoBehaviour
     {
         GroundedCheck();
         // Saut
-        if (isJumpKeyPressed && jumpsCount > 0 && isGrounded)
+        if (isJumpKeyPressed && jumpsCount > 0 && (isGrounded || this.gameObject.GetComponent<Player>().hasShoes) )
         {
-            rigidBodyComponent.velocity = new Vector2(rigidBodyComponent.velocity.x, 0f); // Met la velocit� y � 0 pour double saut
+            //rigidBodyComponent.velocity = new Vector2(rigidBodyComponent.velocity.x, 0f); // Met la velocit� y � 0 pour double saut
             Vector2 jumpVector = Vector2.up* jumpForce ;
             //Debug.Log(jumpForce);
             rigidBodyComponent.AddForce(jumpVector, ForceMode2D.Impulse); // Ajout force verticale

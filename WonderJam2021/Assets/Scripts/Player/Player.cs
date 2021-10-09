@@ -13,8 +13,21 @@ public class Player : MonoBehaviour
     public bool hasShoes;
     public bool hasArmor;
     public int hasPotion;
+    public int maxPlayerHealth;
+    public int playerHealth;
     private void Start() {
         currentCoins = 0;
+    }
+
+    void Update() {
+        if(Input.GetButtonDown("usePotion"))
+        {
+            if(hasPotion > 0)
+            {
+                hasPotion -= 1;
+                playerHealth = maxPlayerHealth;
+            }
+        }
     }
     public void setCoins(int coins)
     {

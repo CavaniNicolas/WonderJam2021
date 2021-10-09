@@ -35,6 +35,7 @@ public class getItem : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Item")
         {
+            //ShowText(other.GetItemName);
             canBuy = true;
             itemToBuy = other.gameObject;
         }
@@ -76,11 +77,13 @@ public class getItem : MonoBehaviour
                 if (cost <= coins)
                 {
                     player.GetComponent<Player>().hasMinerHelmet = true;
+                    player.GetComponent<GestionItem>().BuyHelmet();
                     coins -= cost;
+                    DisplayText("J'ai acheté le casque de mineur !!");
                 }
                 else
                 {
-                    Debug.Log("pas assez de sous");
+                    DisplayText("Je n'ai pas assez de sous pour ça");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -93,11 +96,13 @@ public class getItem : MonoBehaviour
                 if (cost <= coins)
                 {
                     player.GetComponent<Player>().hasTorch = true;
+                    player.GetComponent<GestionItem>().BuyTorch();
                     coins -= cost;
+                    DisplayText("J'ai acheteé la torche !!");
                 }
                 else
                 {
-                    Debug.Log("pas assez de sous sale rat");
+                    DisplayText("Je n'ai pas assez de sous pour ça");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -110,11 +115,13 @@ public class getItem : MonoBehaviour
                 if (cost <= coins)
                 {
                     player.GetComponent<Player>().hasLeash = true;
+                    player.GetComponent<GestionItem>().BuyLeash();
                     coins -= cost;
+                    DisplayText("J'ai acheté la laisse électrique !!");
                 }
                 else
                 {
-                    Debug.Log("pas assez de sous sale rat");
+                    DisplayText("Je n'ai pas assez de sous pour ça");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -127,11 +134,13 @@ public class getItem : MonoBehaviour
                 if (cost <= coins)
                 {
                     player.GetComponent<Player>().hasArmor = true;
+                    player.GetComponent<GestionItem>().BuyArmor();
                     coins -= cost;
+                    DisplayText("J'ai acheté la laisse électrique !!");
                 }
                 else
                 {
-                    Debug.Log("pas assez de sous sale rat");
+                    DisplayText("Je n'ai pas assez de sous pour ça");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -144,11 +153,13 @@ public class getItem : MonoBehaviour
                 if (cost <= coins)
                 {
                     player.GetComponent<Player>().hasShoes = true;
+                    player.GetComponent<GestionItem>().BuyBoots();
                     coins -= cost;
+                    DisplayText("J'ai acheté les bottes ailées !!");
                 }
                 else
                 {
-                    Debug.Log("pas assez de sous sale rat");
+                    DisplayText("Je n'ai pas assez de sous pour ça");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -162,10 +173,11 @@ public class getItem : MonoBehaviour
                 {
                     player.GetComponent<Player>().hasPotion += 1;
                     coins -= cost;
+                    DisplayText("J'ai acheté 1 potion !!");
                 }
                 else
                 {
-                    Debug.Log("pas assez de sous sale rat");
+                    DisplayText("Je n'ai pas assez de sous pour ça");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -184,8 +196,4 @@ public class getItem : MonoBehaviour
         DisplayText("+ "+ coinsGet + " Golds");
         
     }
-            
-        
-
-    
 }

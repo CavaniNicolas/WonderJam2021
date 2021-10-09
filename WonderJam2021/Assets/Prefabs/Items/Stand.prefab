@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c188f7b889c6f64183b1fdbf46b92ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Potions
+  itemName: Potion
   itemCost: 10
 --- !u!1 &1537128511412342579
 GameObject:
