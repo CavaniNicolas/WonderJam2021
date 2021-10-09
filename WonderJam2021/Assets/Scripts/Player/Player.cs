@@ -5,6 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int currentCoins;
+    public int maxPlayerHealth = 3;
+    public int playerHealth;
+    public float invulnTime = 3f;
+    private float currentInvulnTime = 0f;
+    public bool hasBeenDamaged = false;
+    
 
     //to know if the player already has items
     public bool hasMinerHelmet;
@@ -13,15 +19,17 @@ public class Player : MonoBehaviour
     public bool hasShoes;
     public bool hasArmor;
     public int hasPotion;
-    public int maxPlayerHealth = 3;
-    public int playerHealth;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start() {
         currentCoins = 0;
         playerHealth = maxPlayerHealth;
     }
-    private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
-    }
+
     void Update() {
         if(Input.GetButtonDown("usePotion"))
         {
@@ -31,13 +39,52 @@ public class Player : MonoBehaviour
                 playerHealth = maxPlayerHealth;
             }
         }
+
+        if (hasBeenDamaged)
+        {
+            currentInvulnTime += Time.deltaTime;
+            if (currentInvulnTime >= invulnTime)
+            {
+                currentInvulnTime = 0f;
+                hasBeenDamaged = false;
+            }
+        }
     }
+
     public void setCoins(int coins)
     {
         currentCoins = coins;
     }
+
     public int getCoins()
     {
         return currentCoins;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        playerHealth -= damage;
+
+        if(playerHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        Debug.Log("Player is dead");
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(!hasBeenDamaged)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                TakeDamage(collision.gameObject.GetComponent<EnemyBase>().damage);
+                hasBeenDamaged = true;
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ public class Fireball : MonoBehaviour
     // linked to the rigid body of the fireball
     public Rigidbody2D rb;
     public float speed = 5f;
+    public int damage = 1;
 
     private Vector2 direction; // left or right
 
@@ -17,10 +18,13 @@ public class Fireball : MonoBehaviour
         rb.velocity = transform.right * direction.x * speed;
         Destroy(gameObject, 3);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(collision.name);
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+            collision.gameObject.GetComponent<Player>().hasBeenDamaged = true;
+            Destroy(gameObject);
+        }
     }
 }

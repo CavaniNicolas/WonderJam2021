@@ -29,7 +29,6 @@ public class DisplayTextNPC : MonoBehaviour
 
     public void DisplayTextOnBox(string text)
     {
-        Debug.Log("wesh");
         if(text == "Torch")
         {
             TextBox.text = "You need light around you ? \n only 40 golds and it's for ya";

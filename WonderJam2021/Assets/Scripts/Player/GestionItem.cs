@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GestionItem : MonoBehaviour
 {
+    public GameObject ghost;
+    public GameObject rope;
     public GameObject Hat;
     private GameObject player;
     public GameObject torch;
-    public GameObject ghost;
-    public GameObject rope;
 
     public int upgradeDamageLeash = 3;
     public Color upgradeColorLeash = new Color(0, 255, 255);
