@@ -1549,6 +1549,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740450932}
+    - target: {fileID: 3252251339123625982, guid: 6c1ed1d745ce5da438e4130e99fa63f7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1734.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3749249418098311124, guid: 6c1ed1d745ce5da438e4130e99fa63f7, type: 3}
       propertyPath: m_Name
       value: GameUI
