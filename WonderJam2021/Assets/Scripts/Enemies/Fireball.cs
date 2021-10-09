@@ -18,6 +18,11 @@ public class Fireball : MonoBehaviour
         Destroy(gameObject, 3);
     }
 
+    public void setDirection(Vector2 direction)
+    {
+        m_direction = direction;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log(collision.name);

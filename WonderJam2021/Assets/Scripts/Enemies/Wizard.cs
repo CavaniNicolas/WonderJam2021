@@ -12,8 +12,20 @@ public class Wizard : MonoBehaviour
     public Transform m_firePoint;
     public GameObject m_fireBallPrefab;
 
+    public bool m_isFacingRight = true;
+    private Vector2 m_direction = Vector2.right;
+
     private void FixedUpdate()
     {
+        if ((m_isFacingRight && m_direction == Vector2.left) || (!m_isFacingRight && m_direction == Vector2.right))
+        {
+            transform.Rotate(0f, 180f, 0f);
+            if (m_isFacingRight)
+                m_direction = Vector2.right;
+            else
+                m_direction = Vector2.left;
+        }
+
         if (Time.realtimeSinceStartup - m_lastShotTime > m_attackSpeed)
         {
             shoot();
@@ -23,6 +35,7 @@ public class Wizard : MonoBehaviour
 
     private void shoot()
     {
-        Instantiate(m_fireBallPrefab, m_firePoint.position, m_firePoint.rotation);
+        GameObject fireball = Instantiate(m_fireBallPrefab, m_firePoint.position, m_firePoint.rotation);
+        fireball.GetComponent<Fireball>().setDirection(m_direction);
     }
 }
