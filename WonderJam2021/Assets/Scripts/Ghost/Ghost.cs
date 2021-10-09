@@ -25,6 +25,7 @@ public class Ghost : MonoBehaviour
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
     }
+
     private void Update()
     {
         if (player.GetComponent<PlayerMovement>().isFacingRight())

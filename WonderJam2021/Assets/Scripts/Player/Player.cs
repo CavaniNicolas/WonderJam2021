@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -78,7 +79,7 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("isDead", true);
         isDead = true;
-        Debug.Log("Player is dead");
+        Invoke("Revive", 2f);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -95,5 +96,14 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+
+    private void Revive()
+    {
+        playerHealth = maxPlayerHealth;
+        animator.SetBool("isDead", false);
+        isDead = false;
+        hasBeenDamaged = false;
+        SceneManager.LoadScene("SceneOutsideNoPlayer");
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
@@ -11,6 +11,11 @@ public class CameraFollowPlayer : MonoBehaviour
 
     [Range(0, 100)]
     public int currentStage = 0;
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player").transform;
+    }
 
 
     void FixedUpdate()

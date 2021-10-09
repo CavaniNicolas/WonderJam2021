@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if( director.state != PlayState.Playing)
+        if(director == null || director.state != PlayState.Playing)
         {
             if(!playerStat.isDead)
             {
