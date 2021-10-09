@@ -5,24 +5,37 @@ using UnityEngine;
 public class Wizard : EnemyBase
 {
 
-    public float attackSpeed; // in seconds
+    public float m_attackSpeed; // in seconds
 
-    private float lastShotTime;
+    private float m_lastShotTime;
 
-    public Transform firePoint;
-    public GameObject fireBallPrefab;
+    public Transform m_firePoint;
+    public GameObject m_fireBallPrefab;
+
+    public bool m_isFacingRight = true;
+    private Vector2 m_direction = Vector2.right;
 
     private void FixedUpdate()
     {
-        if (Time.realtimeSinceStartup - lastShotTime > attackSpeed)
+        if ((m_isFacingRight && m_direction == Vector2.left) || (!m_isFacingRight && m_direction == Vector2.right))
+        {
+            transform.Rotate(0f, 180f, 0f);
+            if (m_isFacingRight)
+                m_direction = Vector2.right;
+            else
+                m_direction = Vector2.left;
+        }
+
+        if (Time.realtimeSinceStartup - m_lastShotTime > m_attackSpeed)
         {
             shoot();
-            lastShotTime = Time.realtimeSinceStartup;
+            m_lastShotTime = Time.realtimeSinceStartup;
         }
     }
 
     private void shoot()
     {
-        Instantiate(fireBallPrefab, firePoint.position, firePoint.rotation);
+        GameObject fireball = Instantiate(m_fireBallPrefab, m_firePoint.position, m_firePoint.rotation);
+        fireball.GetComponent<Fireball>().setDirection(m_direction);
     }
 }
