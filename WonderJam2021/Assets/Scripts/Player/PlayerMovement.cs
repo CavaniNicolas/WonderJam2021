@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private int jumpsCount = 1;
     private bool isJumpKeyPressed;
     private float horizontalnput;
+    private bool isGrounded = true;
 
     void Awake()
     {
@@ -40,14 +41,9 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate is called every physics update
     private void FixedUpdate()
     {
-        // Reset compteur de saut si sur le sol
-        if (isGrounded())
-        {
-            jumpsCount = jumpCountMax;
-        }
-
+        GroundedCheck();
         // Saut
-        if (isJumpKeyPressed && jumpsCount > 0)
+        if (isJumpKeyPressed && jumpsCount > 0 && isGrounded)
         {
             rigidBodyComponent.velocity = new Vector2(rigidBodyComponent.velocity.x, 0f); // Met la velocité y à 0 pour double saut
             rigidBodyComponent.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Ajout force verticale
@@ -61,9 +57,18 @@ public class PlayerMovement : MonoBehaviour
         isJumpKeyPressed = false;
     }
 
-    public bool isGrounded() // Check si le player est sur le sol avec un BoxCast
+    public void GroundedCheck() // Check si le player est sur le sol avec un BoxCast
     {
         RaycastHit2D hit = Physics2D.BoxCast(groundCheck.position, new Vector2(this.transform.localScale.x, 0.1f), 0.0f, Vector2.down, 0f, platformMask);
-        return hit.collider != null;
+
+        if (hit.collider != null)
+        {
+            jumpsCount = jumpCountMax; // Reset compteur de saut
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 }
