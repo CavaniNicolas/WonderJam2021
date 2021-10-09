@@ -1,0 +1,74 @@
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    // public Variables
+    public float moveSpeed = 10;
+    public float jumpForce = 10;
+    public int jumpCountMax = 1; // Si besoin pour faire un double saut
+    public Transform groundCheck; // placer l'empty groundCheck au milieu du perso au niveau des pieds
+    public LayerMask platformMask; // Le layermask des plateformes
+
+    // private Variables
+    private Rigidbody2D rigidBodyComponent;
+    private int jumpsCount = 1;
+    private bool isJumpKeyPressed;
+    private float horizontalnput;
+    private bool isGrounded = true;
+
+    void Awake()
+    {
+        rigidBodyComponent = GetComponent<Rigidbody2D>(); // On récupère le rigidbody du player
+    }
+
+    private void Start()
+    {
+        jumpsCount = jumpCountMax;
+    }
+
+    void Update()
+    {
+        // Jump input
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumpKeyPressed = true;
+        }
+
+        // Horizontal movement input
+        horizontalnput = Input.GetAxisRaw("Horizontal");
+    }
+
+    // FixedUpdate is called every physics update
+    private void FixedUpdate()
+    {
+        GroundedCheck();
+        // Saut
+        if (isJumpKeyPressed && jumpsCount > 0 && isGrounded)
+        {
+            rigidBodyComponent.velocity = new Vector2(rigidBodyComponent.velocity.x, 0f); // Met la velocité y à 0 pour double saut
+            rigidBodyComponent.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Ajout force verticale
+            jumpsCount--;
+        }
+
+        // Déplacement horizontal
+        rigidBodyComponent.velocity = new Vector2(horizontalnput * moveSpeed * 10f * Time.fixedDeltaTime, rigidBodyComponent.velocity.y);
+
+        // Reset jump input
+        isJumpKeyPressed = false;
+    }
+
+    public void GroundedCheck() // Check si le player est sur le sol avec un BoxCast
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(groundCheck.position, new Vector2(this.transform.localScale.x, 0.1f), 0.0f, Vector2.down, 0f, platformMask);
+
+        if (hit.collider != null)
+        {
+            jumpsCount = jumpCountMax; // Reset compteur de saut
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+}
