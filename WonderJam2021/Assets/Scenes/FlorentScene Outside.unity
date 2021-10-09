@@ -5324,6 +5324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeMAp
       objectReference: {fileID: 0}
+    - target: {fileID: 8190154397686312878, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
+      propertyPath: sceneToLoad
+      value: SceneLevel1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
 --- !u!1 &1370450601
