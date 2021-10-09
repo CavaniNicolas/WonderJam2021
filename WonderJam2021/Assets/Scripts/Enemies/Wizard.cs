@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : MonoBehaviour
+public class Wizard : EnemyBase
 {
 
     public float attackSpeed; // in seconds
