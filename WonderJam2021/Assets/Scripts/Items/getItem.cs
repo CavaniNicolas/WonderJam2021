@@ -10,11 +10,10 @@ public class GetItem : MonoBehaviour
     private bool canOpenChest = false;
     private GameObject chestToOpen;
     public GameObject text;
-    private GameObject NPCDialog;
+    public GameObject NPCDialog;
 
     void Awake() {
         NPCDialog = GameObject.Find("Dialog NPC");
-        Debug.Log(NPCDialog);
     }
 
     void Update() {

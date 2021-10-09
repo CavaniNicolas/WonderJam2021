@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 8115970952918828375}
   - component: {fileID: 3115888861623029542}
   - component: {fileID: 1933780094757329393}
-  - component: {fileID: 5952762808336539267}
+  - component: {fileID: 8868889673581654169}
   - component: {fileID: 683788239812287574}
   m_Layer: 3
   m_Name: Player
@@ -936,7 +936,7 @@ MonoBehaviour:
   hasPotion: 0
   maxPlayerHealth: 3
   playerHealth: 0
---- !u!114 &5952762808336539267
+--- !u!114 &8868889673581654169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

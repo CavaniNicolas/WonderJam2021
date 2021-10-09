@@ -29,7 +29,6 @@ public class DisplayText : MonoBehaviour
 
     public void DisplayTextOnBox(string addingText)
     {
-        Debug.Log(addingText);
         TextBox.text = addingText;
         timer = 0;
         add = true;

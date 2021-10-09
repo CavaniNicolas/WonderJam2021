@@ -13,6 +13,9 @@ public class Rope : MonoBehaviour
     public int segmentLength = 35;
     public float lineWidth = 0.1f;
 
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+    }
     // Use this for initialization
     void Start()
     {
