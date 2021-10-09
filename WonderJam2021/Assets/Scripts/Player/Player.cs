@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
     private void Start() {
         currentCoins = 0;
     }
-
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Update() {
         if(Input.GetButtonDown("usePotion"))
         {

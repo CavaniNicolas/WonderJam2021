@@ -10,6 +10,12 @@ public class getItem : MonoBehaviour
     private bool canOpenChest = false;
     private GameObject chestToOpen;
     public GameObject text;
+    private GameObject NPCDialog;
+
+    void Awake() {
+        NPCDialog = GameObject.Find("Dialog NPC");
+        Debug.Log(NPCDialog);
+    }
 
     void Update() {
         if (canBuy)
@@ -18,7 +24,6 @@ public class getItem : MonoBehaviour
             {
                 
                 BuyItem();
-                
             }
         }
 
@@ -35,7 +40,7 @@ public class getItem : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Item")
         {
-            //ShowText(other.GetItemName);
+            ShowText(other.gameObject.GetComponent<Item_Info>().GetItemName());
             canBuy = true;
             itemToBuy = other.gameObject;
         }
@@ -60,7 +65,7 @@ public class getItem : MonoBehaviour
     //to return something to the player such has how much that cost or the property of the item to make pnj talk
     void ShowText(string text)
     {
-        Debug.Log("j'essaye d'achete la/le : " + text);
+        NPCDialog.GetComponent<DisplayTextNPC>().DisplayTextOnBox(text);
     }
     
     //to buy an item and/or not get its effect
@@ -79,11 +84,12 @@ public class getItem : MonoBehaviour
                     player.GetComponent<Player>().hasMinerHelmet = true;
                     player.GetComponent<GestionItem>().BuyHelmet();
                     coins -= cost;
-                    DisplayText("J'ai acheté le casque de mineur !!");
+                    DisplayText("I bought a frontlight");
+                    itemToBuy.SetActive(false); 
                 }
                 else
                 {
-                    DisplayText("Je n'ai pas assez de sous pour ça");
+                    DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -98,11 +104,12 @@ public class getItem : MonoBehaviour
                     player.GetComponent<Player>().hasTorch = true;
                     player.GetComponent<GestionItem>().BuyTorch();
                     coins -= cost;
-                    DisplayText("J'ai acheteé la torche !!");
+                    DisplayText("I bought the Torch !");
+                    itemToBuy.SetActive(false);
                 }
                 else
                 {
-                    DisplayText("Je n'ai pas assez de sous pour ça");
+                    DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -117,11 +124,12 @@ public class getItem : MonoBehaviour
                     player.GetComponent<Player>().hasLeash = true;
                     player.GetComponent<GestionItem>().BuyLeash();
                     coins -= cost;
-                    DisplayText("J'ai acheté la laisse électrique !!");
+                    DisplayText("I bought Electric Leash.");
+                    itemToBuy.SetActive(false);
                 }
                 else
                 {
-                    DisplayText("Je n'ai pas assez de sous pour ça");
+                    DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -136,11 +144,12 @@ public class getItem : MonoBehaviour
                     player.GetComponent<Player>().hasArmor = true;
                     player.GetComponent<GestionItem>().BuyArmor();
                     coins -= cost;
-                    DisplayText("J'ai acheté la laisse électrique !!");
+                    DisplayText("I bought the armor");
+                    itemToBuy.SetActive(false);
                 }
                 else
                 {
-                    DisplayText("Je n'ai pas assez de sous pour ça");
+                    DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -155,11 +164,12 @@ public class getItem : MonoBehaviour
                     player.GetComponent<Player>().hasShoes = true;
                     player.GetComponent<GestionItem>().BuyBoots();
                     coins -= cost;
-                    DisplayText("J'ai acheté les bottes ailées !!");
+                    DisplayText("I got Legendary Boots");
+                    itemToBuy.SetActive(false);
                 }
                 else
                 {
-                    DisplayText("Je n'ai pas assez de sous pour ça");
+                    DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
@@ -173,13 +183,17 @@ public class getItem : MonoBehaviour
                 {
                     player.GetComponent<Player>().hasPotion += 1;
                     coins -= cost;
-                    DisplayText("J'ai acheté 1 potion !!");
+                    DisplayText("I bought a pot !");
                 }
                 else
                 {
-                    DisplayText("Je n'ai pas assez de sous pour ça");
+                    DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
+            }
+            else if (player.GetComponent<Player>().hasPotion >= 3)
+            {
+                DisplayText("I already have enough of these in my pocket");
             }
         }
     }
@@ -194,6 +208,6 @@ public class getItem : MonoBehaviour
         currentcoins += coinsGet;
         player.GetComponent<Player>().setCoins(currentcoins);
         DisplayText("+ "+ coinsGet + " Golds");
-        
+        chestToOpen.SetActive(false);
     }
 }

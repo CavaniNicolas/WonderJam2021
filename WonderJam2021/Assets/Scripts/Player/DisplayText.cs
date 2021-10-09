@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DisplayText : MonoBehaviour
 {
     private float timer;
-    public Text TextBox;
+    public TMP_Text TextBox;
     private bool add;
 
     // Update is called once per frame
