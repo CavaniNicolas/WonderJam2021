@@ -9,12 +9,16 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck; // placer l'empty groundCheck au milieu du perso au niveau des pieds
     public LayerMask platformMask; // Le layermask des plateformes
 
+    public Animator animator;       // utilise pour les animation
+    public SpriteRenderer sprite;
+
     // private Variables
     private Rigidbody2D rigidBodyComponent;
     private int jumpsCount = 1;
     private bool isJumpKeyPressed;
     private float horizontalnput;
     private bool isGrounded = true;
+    private bool m_FacingRight = true; // ou le personnage regarde
 
     void Awake()
     {
@@ -36,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Horizontal movement input
         horizontalnput = Input.GetAxisRaw("Horizontal");
+
+
+        // Animationn 
+        FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
+        animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
     }
 
     // FixedUpdate is called every physics update
@@ -48,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
             rigidBodyComponent.velocity = new Vector2(rigidBodyComponent.velocity.x, 0f); // Met la velocité y à 0 pour double saut
             rigidBodyComponent.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Ajout force verticale
             jumpsCount--;
+
+            animator.SetBool("isJumping", true);
+
         }
 
         // Déplacement horizontal
@@ -65,10 +77,37 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpsCount = jumpCountMax; // Reset compteur de saut
             isGrounded = true;
+            animator.SetBool("isJumping", false);
         }
         else
         {
             isGrounded = false;
+            animator.SetBool("isJumping", true);
         }
     }
+
+
+
+    private void FlipHandle(float move)
+    {
+
+        if (move > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+            sprite.flipX = false;
+            m_FacingRight = !m_FacingRight;
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (move < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+            sprite.flipX = true;
+            m_FacingRight = !m_FacingRight;
+
+        }
+
+
+    }
+
+
 }
