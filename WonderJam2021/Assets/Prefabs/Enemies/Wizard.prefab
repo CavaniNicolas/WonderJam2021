@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5db10a63a8a0649903abacc8b4519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1.5
-  firePoint: {fileID: 7856108687231640419}
-  fireBallPrefab: {fileID: 6556229461667012619, guid: 09fb1d9e17e81b842bc8aecf8efbb5a6, type: 3}
+  m_attackSpeed: 1.5
+  m_firePoint: {fileID: 7856108687231640419}
+  m_fireBallPrefab: {fileID: 6556229461667012619, guid: 09fb1d9e17e81b842bc8aecf8efbb5a6, type: 3}
 --- !u!70 &8890105409013042235
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

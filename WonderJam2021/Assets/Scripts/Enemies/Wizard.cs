@@ -5,24 +5,24 @@ using UnityEngine;
 public class Wizard : MonoBehaviour
 {
 
-    public float attackSpeed; // in seconds
+    public float m_attackSpeed; // in seconds
 
-    private float lastShotTime;
+    private float m_lastShotTime;
 
-    public Transform firePoint;
-    public GameObject fireBallPrefab;
+    public Transform m_firePoint;
+    public GameObject m_fireBallPrefab;
 
     private void FixedUpdate()
     {
-        if (Time.realtimeSinceStartup - lastShotTime > attackSpeed)
+        if (Time.realtimeSinceStartup - m_lastShotTime > m_attackSpeed)
         {
             shoot();
-            lastShotTime = Time.realtimeSinceStartup;
+            m_lastShotTime = Time.realtimeSinceStartup;
         }
     }
 
     private void shoot()
     {
-        Instantiate(fireBallPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(m_fireBallPrefab, m_firePoint.position, m_firePoint.rotation);
     }
 }

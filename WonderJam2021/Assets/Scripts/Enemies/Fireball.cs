@@ -5,16 +5,16 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     // linked to the rigid body of the fireball
-    public Rigidbody2D rb;
-    public float speed = 5f;
+    public Rigidbody2D m_rb;
+    public float m_speed = 5f;
 
-    private Vector2 direction; // left or right
+    private Vector2 m_direction; // left or right
 
     // Start is called before the first frame update
     void Start()
     {
-        direction = Vector2.right;
-        rb.velocity = transform.right * direction.x * speed;
+        m_direction = Vector2.right;
+        m_rb.velocity = transform.right * m_direction.x * m_speed;
         Destroy(gameObject, 3);
     }
 
