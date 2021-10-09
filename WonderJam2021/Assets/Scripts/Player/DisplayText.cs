@@ -10,8 +10,7 @@ public class DisplayText : MonoBehaviour
     public TMP_Text TextBox;
     private bool add;
 
-    // Update is called once per frame
-    private void FixedUpdate() {
+    private void Update() {
         timer += Time.deltaTime;
         if(timer < 2)
         {

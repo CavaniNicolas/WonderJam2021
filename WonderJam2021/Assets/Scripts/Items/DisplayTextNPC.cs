@@ -11,7 +11,7 @@ public class DisplayTextNPC : MonoBehaviour
     private bool add;
 
     // Update is called once per frame
-    private void FixedUpdate() {
+    private void Update() {
         timer += Time.deltaTime;
         if(timer < 2)
         {

@@ -21,7 +21,7 @@ TagManager:
   - Platform
   - Enemy
   - Projectile
-  - 
+  - Ghost
   - 
   - 
   - 
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: Ghost
     uniqueID: 479072383
+    locked: 0
+  - name: UI
+    uniqueID: 3394495797
     locked: 0
