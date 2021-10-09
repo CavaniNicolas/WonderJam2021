@@ -506,6 +506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goomba
       objectReference: {fileID: 0}
+    - target: {fileID: 6732941517476810810, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 2085319235}
     - target: {fileID: 6732941517476810814, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -621,6 +625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+--- !u!212 &2085319235 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 395456338, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
+  m_PrefabInstance: {fileID: 2001353391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2107322325
 PrefabInstance:
   m_ObjectHideFlags: 0

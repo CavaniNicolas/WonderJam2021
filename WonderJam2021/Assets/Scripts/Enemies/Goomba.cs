@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Goomba : MonoBehaviour
 {
+    public SpriteRenderer sprite;
+
     public GameObject platformLeft;
     public GameObject platformRight;
 
@@ -52,6 +54,8 @@ public class Goomba : MonoBehaviour
 
         // moves the goomba
         transform.position = transform.position + new Vector3(velocity * direction * Time.fixedDeltaTime, 0, 0);
+
+        FlipHandle();
     }
 
     private bool IsPlayerOnPlatform()
@@ -71,4 +75,22 @@ public class Goomba : MonoBehaviour
         // // ca cest casse
         // return Physics2D.BoxCast(transform.position/* + new Vector3(0, transform.localScale.y, 0)*/, new Vector2(transform.localScale.x, transform.localScale.y), 0f, new Vector2(direction, 0), distance, playerMask);
     }
+
+    private void FlipHandle()
+    {
+        // if goomba goes right
+        if (direction > 0)
+        {
+            // ... flip the player.
+            sprite.flipX = true;
+        }
+        // if goomba goes left
+        else if (direction < 0)
+        {
+            // ... flip the player.
+            sprite.flipX = false;
+
+        }
+    }
+
 }
