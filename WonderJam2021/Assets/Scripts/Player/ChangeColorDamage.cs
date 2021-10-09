@@ -16,7 +16,7 @@ public class ChangeColorDamage : MonoBehaviour
 
     private void Update()
     {
-        if (playerScript.hasBeenDamaged)
+        if (playerScript.hasBeenDamaged && !playerScript.isDead)
         {
             sprite.color = new Color(255, 0, 0);
         }

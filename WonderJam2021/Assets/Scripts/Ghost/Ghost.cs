@@ -33,10 +33,12 @@ public class Ghost : MonoBehaviour
             attackPos = new Vector3(player.transform.position.x - attackRange, player.transform.position.y, player.transform.position.z);
         }
         
-
-        if (Input.GetButtonDown("Attack") && !attackCoroutineRunning)
+        if(!player.GetComponent<Player>().isDead)
         {
-            Attack();
+            if (Input.GetButtonDown("Attack") && !attackCoroutineRunning)
+            {
+                Attack();
+            }
         }
     }
 

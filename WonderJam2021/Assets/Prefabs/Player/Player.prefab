@@ -927,6 +927,7 @@ MonoBehaviour:
   platformMask:
     serializedVersion: 2
     m_Bits: 64
+  playerStat: {fileID: 1933780094757329393}
   animator: {fileID: 5179217699263055601}
   sprite: {fileID: 1971095459791714368}
 --- !u!114 &1933780094757329393
@@ -946,6 +947,8 @@ MonoBehaviour:
   playerHealth: 0
   invulnTime: 3
   hasBeenDamaged: 0
+  animator: {fileID: 5179217699263055601}
+  isDead: 0
   hasMinerHelmet: 0
   hasTorch: 0
   hasLeash: 0

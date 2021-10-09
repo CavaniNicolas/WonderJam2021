@@ -10,7 +10,10 @@ public class Player : MonoBehaviour
     public float invulnTime = 3f;
     private float currentInvulnTime = 0f;
     public bool hasBeenDamaged = false;
-    
+    public Animator animator;
+
+    public bool isDead = false;
+
 
     //to know if the player already has items
     public bool hasMinerHelmet;
@@ -73,18 +76,24 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
+        animator.SetBool("isDead", true);
+        isDead = true;
         Debug.Log("Player is dead");
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!hasBeenDamaged)
+        if(!isDead)
         {
-            if (collision.gameObject.CompareTag("Enemy"))
+            if(!hasBeenDamaged)
             {
-                TakeDamage(collision.gameObject.GetComponent<EnemyBase>().damage);
-                hasBeenDamaged = true;
+                if (collision.gameObject.CompareTag("Enemy"))
+                {
+                    TakeDamage(collision.gameObject.GetComponent<EnemyBase>().damage);
+                    hasBeenDamaged = true;
+                }
             }
+
         }
     }
 }

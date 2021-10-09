@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public int jumpCountMax = 1; // Si besoin pour faire un double saut
     public Transform groundCheck; // placer l'empty groundCheck au milieu du perso au niveau des pieds
     public LayerMask platformMask; // Le layermask des plateformes
+    public Player playerStat;
 
     public Animator animator;       // utilise pour les animation
     public SpriteRenderer sprite;
@@ -34,19 +35,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Jump input
-        if (Input.GetButtonDown("Jump"))
+        if(!playerStat.isDead)
         {
-            isJumpKeyPressed = true;
+            // Jump input
+            if (Input.GetButtonDown("Jump"))
+            {
+                isJumpKeyPressed = true;
+            }
+
+            // Horizontal movement input
+            horizontalnput = Input.GetAxisRaw("Horizontal");
+
+
+            // Animationn 
+            FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
+            animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
         }
-
-        // Horizontal movement input
-        horizontalnput = Input.GetAxisRaw("Horizontal");
-
-
-        // Animationn 
-        FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
-        animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
+        else
+        {
+            isJumpKeyPressed = false;
+            horizontalnput = 0;
+        }
     }
 
     // FixedUpdate is called every physics update

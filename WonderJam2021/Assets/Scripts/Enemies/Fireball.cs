@@ -28,8 +28,11 @@ public class Fireball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if(!collision.GetComponent<Player>().hasBeenDamaged)
+            {
             collision.gameObject.GetComponent<Player>().TakeDamage(damage);
             collision.gameObject.GetComponent<Player>().hasBeenDamaged = true;
+            }
             Destroy(gameObject);
         }
     }
