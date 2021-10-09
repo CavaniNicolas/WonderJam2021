@@ -14,7 +14,6 @@ public class GetItem : MonoBehaviour
 
     void Awake() {
         NPCDialog = GameObject.Find("Dialog NPC");
-        Debug.Log(NPCDialog);
     }
 
     void Update() {

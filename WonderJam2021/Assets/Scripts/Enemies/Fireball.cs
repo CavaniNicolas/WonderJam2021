@@ -9,19 +9,19 @@ public class Fireball : MonoBehaviour
     public float speed = 5f;
     public int damage = 1;
 
-    private Vector2 m_direction; // left or right
+    private Vector2 direction; // left or right
 
     // Start is called before the first frame update
     void Start()
     {
-        m_direction = Vector2.right;
-        m_rb.velocity = transform.right * m_direction.x * m_speed;
+        direction = Vector2.right;
+        rb.velocity = transform.right * direction.x * speed;
         Destroy(gameObject, 3);
     }
 
     public void setDirection(Vector2 direction)
     {
-        m_direction = direction;
+        this.direction = direction;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
