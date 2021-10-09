@@ -57,7 +57,9 @@ public class PlayerMovement : MonoBehaviour
         if (isJumpKeyPressed && jumpsCount > 0 && isGrounded)
         {
             rigidBodyComponent.velocity = new Vector2(rigidBodyComponent.velocity.x, 0f); // Met la velocit� y � 0 pour double saut
-            rigidBodyComponent.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Ajout force verticale
+            Vector2 jumpVector = Vector2.up* jumpForce ;
+            //Debug.Log(jumpForce);
+            rigidBodyComponent.AddForce(jumpVector, ForceMode2D.Impulse); // Ajout force verticale
             jumpsCount--;
 
             animator.SetBool("isJumping", true);
