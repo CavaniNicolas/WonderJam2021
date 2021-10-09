@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;       // utilise pour les animation
     public SpriteRenderer sprite;
+    public PlayableDirector director;
 
     // private Variables
     private Rigidbody2D rigidBodyComponent;
@@ -35,26 +37,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(!playerStat.isDead)
+        if( director.state != PlayState.Playing)
         {
-            // Jump input
-            if (Input.GetButtonDown("Jump"))
+            if(!playerStat.isDead)
             {
-                isJumpKeyPressed = true;
+                // Jump input
+                if (Input.GetButtonDown("Jump"))
+                {
+                    isJumpKeyPressed = true;
+                }
+
+                // Horizontal movement input
+                horizontalnput = Input.GetAxisRaw("Horizontal");
+
+
+                // Animationn 
+                FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
+                animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
             }
-
-            // Horizontal movement input
-            horizontalnput = Input.GetAxisRaw("Horizontal");
-
-
-            // Animationn 
-            FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
-            animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
-        }
-        else
-        {
-            isJumpKeyPressed = false;
-            horizontalnput = 0;
+            else
+            {
+                isJumpKeyPressed = false;
+                horizontalnput = 0;
+            }
         }
     }
 
