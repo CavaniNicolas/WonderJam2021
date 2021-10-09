@@ -30,10 +30,16 @@ public class Goomba : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // change goomba direction
-        if (transform.position.x + transform.localScale.x / 2 >= platformRight || transform.position.x - transform.localScale.x / 2 <= platformLeft)
+        // goomba now goes left
+        if (transform.position.x + transform.localScale.x / 2 >= platformRight)
         {
-            direction *= -1;
+            direction = -1;
+        }
+
+        // goomba now goes right
+        if (transform.position.x - transform.localScale.x / 2 <= platformLeft)
+        {
+            direction = 1;
         }
 
         // have goomba run faster if the player is on the same platform
