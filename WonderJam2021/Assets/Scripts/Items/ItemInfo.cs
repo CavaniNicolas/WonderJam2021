@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item_Info : MonoBehaviour
+public class ItemInfo : MonoBehaviour
 {
     public string itemName;
     public int itemCost;

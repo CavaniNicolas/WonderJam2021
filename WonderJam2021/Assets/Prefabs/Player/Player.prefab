@@ -333,7 +333,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6929879557803373893}
-  - component: {fileID: 3599669528952018482}
   - component: {fileID: 8292632307216966394}
   - component: {fileID: 8920016011531731589}
   - component: {fileID: 5421101034633263904}
@@ -363,14 +362,6 @@ RectTransform:
   m_AnchoredPosition: {x: -952.72, y: -537.61}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3599669528952018482
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540495374046636970}
-  m_CullTransparentMesh: 1
 --- !u!114 &8292632307216966394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +934,7 @@ MonoBehaviour:
   hasShoes: 0
   hasArmor: 0
   hasPotion: 0
-  maxPlayerHealth: 0
+  maxPlayerHealth: 3
   playerHealth: 0
 --- !u!114 &5952762808336539267
 MonoBehaviour:
@@ -973,6 +964,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hat: {fileID: 3049662225637958297}
   torch: {fileID: 8050781750099250055}
+  ghost: {fileID: 0}
+  rope: {fileID: 0}
+  upgradeDamageLeash: 3
+  upgradeColorLeash: {r: 0, g: 255, b: 255, a: 1}
+  upgradeArmorHealth: 6
 --- !u!1 &8161906075051490562
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class getItem : MonoBehaviour
+public class GetItem : MonoBehaviour
 {
     private GameObject itemToBuy;
     private bool canBuy = false;
@@ -40,7 +40,7 @@ public class getItem : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Item")
         {
-            ShowText(other.gameObject.GetComponent<Item_Info>().GetItemName());
+            ShowText(other.gameObject.GetComponent<ItemInfo>().GetItemName());
             canBuy = true;
             itemToBuy = other.gameObject;
         }
@@ -72,8 +72,8 @@ public class getItem : MonoBehaviour
     private void BuyItem()
     {
         int coins = player.GetComponent<Player>().getCoins();
-        int cost = itemToBuy.GetComponent<Item_Info>().GetItemCost();
-        string itemName = itemToBuy.GetComponent<Item_Info>().GetItemName();
+        int cost = itemToBuy.GetComponent<ItemInfo>().GetItemCost();
+        string itemName = itemToBuy.GetComponent<ItemInfo>().GetItemName();
         if (itemName == "Miner_helmet")
         {
             if(player.GetComponent<Player>().hasMinerHelmet == false)

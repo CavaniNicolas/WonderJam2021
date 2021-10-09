@@ -13,10 +13,11 @@ public class Player : MonoBehaviour
     public bool hasShoes;
     public bool hasArmor;
     public int hasPotion;
-    public int maxPlayerHealth;
+    public int maxPlayerHealth = 3;
     public int playerHealth;
     private void Start() {
         currentCoins = 0;
+        playerHealth = maxPlayerHealth;
     }
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
