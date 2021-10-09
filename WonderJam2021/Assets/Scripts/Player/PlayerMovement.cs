@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;       // utilise pour les animation
     public SpriteRenderer sprite;
+    public PlayableDirector director;
 
     // private Variables
     private Rigidbody2D rigidBodyComponent;
@@ -34,19 +36,23 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Jump input
-        if (Input.GetButtonDown("Jump"))
+
+        if( director.state != PlayState.Playing)
         {
-            isJumpKeyPressed = true;
+            // Jump input
+            if (Input.GetButtonDown("Jump"))
+            {
+                isJumpKeyPressed = true;
+            }
+
+            // Horizontal movement input
+            horizontalnput = Input.GetAxisRaw("Horizontal");
+
+
+            // Animationn 
+            FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
+            animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
         }
-
-        // Horizontal movement input
-        horizontalnput = Input.GetAxisRaw("Horizontal");
-
-
-        // Animationn 
-        FlipHandle(horizontalnput * Time.fixedDeltaTime);   // flip the animation
-        animator.SetBool("IsRunning", Mathf.Abs(horizontalnput) >0);
     }
 
     // FixedUpdate is called every physics update
