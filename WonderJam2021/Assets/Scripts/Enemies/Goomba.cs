@@ -63,7 +63,6 @@ public class Goomba : MonoBehaviour
         { // if goomba goes left
             distance = transform.position.x + transform.localScale.x / 2 - platformLeft;
         }
-        print(distance);
 
         return Physics2D.Raycast(transform.position, new Vector2(direction, 0), distance, playerMask);
 
