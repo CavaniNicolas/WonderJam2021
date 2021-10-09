@@ -9,7 +9,11 @@ public class DisplayTextNPC : MonoBehaviour
     private float timer;
     public TMP_Text TextBox;
     private bool add;
-
+    private GameObject player;
+    private void Awake() {
+        player = GameObject.Find("Player");
+        player.GetComponent<GetItem>().NPCDialog = this.gameObject;
+    }
     // Update is called once per frame
     private void Update() {
         timer += Time.deltaTime;

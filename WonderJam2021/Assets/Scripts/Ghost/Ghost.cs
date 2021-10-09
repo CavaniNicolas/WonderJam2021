@@ -22,6 +22,9 @@ public class Ghost : MonoBehaviour
     private IEnumerator attackCoroutine;
     private bool attackCoroutineRunning = false;
 
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Update()
     {
         if (player.GetComponent<PlayerMovement>().isFacingRight())
