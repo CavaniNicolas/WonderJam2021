@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     // private Variables
     private Rigidbody2D rigidBodyComponent;
+    private CapsuleCollider2D capsuleColliderComponent;
     private int jumpsCount = 1;
     private bool isJumpKeyPressed;
     private float horizontalnput;
@@ -22,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        rigidBodyComponent = GetComponent<Rigidbody2D>(); // On r�cup�re le rigidbody du player
+        rigidBodyComponent = GetComponent<Rigidbody2D>(); // On recupere le rigidbody du player
+        capsuleColliderComponent = GetComponent<CapsuleCollider2D>(); // On recupere le capsule collider du player
     }
 
     private void Start()
@@ -71,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void GroundedCheck() // Check si le player est sur le sol avec un BoxCast
     {
-        RaycastHit2D hit = Physics2D.BoxCast(groundCheck.position, new Vector2(this.transform.localScale.x, 0.1f), 0.0f, Vector2.down, 0f, platformMask);
+        RaycastHit2D hit = Physics2D.BoxCast(groundCheck.position, new Vector2(capsuleColliderComponent.size.x, 0.1f), 0.0f, Vector2.down, 0f, platformMask);
 
         if (hit.collider != null)
         {
@@ -90,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipHandle(float move)
     {
-
         if (move > 0 && !m_FacingRight)
         {
             // ... flip the player.
@@ -105,9 +106,11 @@ public class PlayerMovement : MonoBehaviour
             m_FacingRight = !m_FacingRight;
 
         }
-
-
     }
 
+    public bool isFacingRight()
+    {
+        return m_FacingRight;
+    }
 
 }
