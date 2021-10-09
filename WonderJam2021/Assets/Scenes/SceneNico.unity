@@ -498,18 +498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3103621049810435245, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.14
-      objectReference: {fileID: 0}
     - target: {fileID: 6732941517476810805, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
       propertyPath: m_Name
       value: Goomba
       objectReference: {fileID: 0}
-    - target: {fileID: 6732941517476810810, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 2085319235}
     - target: {fileID: 6732941517476810814, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -554,10 +546,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6821778588637774777, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.21
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
 --- !u!1001 &2032783351
@@ -581,11 +569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8115970952918828370, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.7954493
+      value: -7.9
       objectReference: {fileID: 0}
     - target: {fileID: 8115970952918828370, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.55
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 8115970952918828370, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -625,11 +613,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
---- !u!212 &2085319235 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 395456338, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
-  m_PrefabInstance: {fileID: 2001353391}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2107322325
 PrefabInstance:
   m_ObjectHideFlags: 0

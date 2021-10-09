@@ -48,9 +48,13 @@ public class Goomba : MonoBehaviour
 
         // have goomba run faster if the player is on the same platform
         if (IsPlayerOnPlatform())
+        {
             velocity = speed * 3;
+        }
         else
+        {
             velocity = speed;
+        }
 
         // moves the goomba
         transform.position = transform.position + new Vector3(velocity * direction * Time.fixedDeltaTime, 0, 0);
@@ -69,7 +73,6 @@ public class Goomba : MonoBehaviour
         { // if goomba goes left
             distance = transform.position.x + transform.localScale.x / 2 - platformLeftX;
         }
-
         return Physics2D.Raycast(transform.position, new Vector2(direction, 0), distance, playerMask);
 
         // // ca cest casse
