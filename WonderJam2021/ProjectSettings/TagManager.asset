@@ -51,3 +51,9 @@ TagManager:
   - name: Character
     uniqueID: 917978197
     locked: 0
+  - name: Rope
+    uniqueID: 2171947033
+    locked: 0
+  - name: Ghost
+    uniqueID: 479072383
+    locked: 0
