@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 886118073}
   - component: {fileID: 886118074}
   - component: {fileID: 886118075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede4cab91f056dc40bafe1c57976b2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  damage: 0
   m_aiPath: {fileID: 687410096}
 --- !u!1 &7397630706236871142
 GameObject:
@@ -130,9 +132,10 @@ GameObject:
   - component: {fileID: 687410096}
   - component: {fileID: 687410098}
   - component: {fileID: 687410099}
-  m_Layer: 0
+  - component: {fileID: 6684392766926064014}
+  m_Layer: 7
   m_Name: Wraith
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,3 +249,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &6684392766926064014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397630706236871142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7228bcf0117143459f4ef08824850f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  damage: 1

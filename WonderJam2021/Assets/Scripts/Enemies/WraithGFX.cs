@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class WraithGFX : MonoBehaviour
+public class WraithGFX : EnemyBase
 {
 
     public AIPath m_aiPath;
