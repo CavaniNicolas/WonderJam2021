@@ -78,6 +78,7 @@ MonoBehaviour:
   - {fileID: 1537128511856560491}
   - {fileID: 1537128512389844389}
   NPCText: {fileID: 5178962577128338895}
+  IntroDone: 0
 --- !u!1 &1537128510717036643
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -83.33, y: 10.17}
+  m_AnchoredPosition: {x: -81.85, y: 11.49}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2297979288685014397

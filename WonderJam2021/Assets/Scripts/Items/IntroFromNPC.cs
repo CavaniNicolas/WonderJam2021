@@ -37,13 +37,21 @@ public class IntroFromNPC : MonoBehaviour
     IEnumerator HandleDialogue()
     {
         float timeToWait = 3.0f;
-        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("Fuck Fuck Fuck");
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("Hello traveler...");
         yield return new WaitForSeconds(timeToWait);
-        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("Quoi pourquoi tu juges");
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("I see you've been struck by bad fortune");
         yield return new WaitForSeconds(timeToWait);
-        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("tu sais quoi ? ta daronne...");
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("This Ghost is now linked to you forever");
         yield return new WaitForSeconds(timeToWait);
-        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("gneuh gneuh pas les daronnes");
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("Get the artifact hidden in the castle to cut the link !");
+        yield return new WaitForSeconds(timeToWait);
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("Thanks to the link you can control the Ghost");
+        yield return new WaitForSeconds(timeToWait);
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("It will help you attack enemies !");
+        yield return new WaitForSeconds(timeToWait);
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("You can buy some things in my shop as well ;)");
+        yield return new WaitForSeconds(timeToWait);
+        NPCText.GetComponent<DisplayTextNPC>().DisplayExactTextOnBox("Good luck !");
         yield return new WaitForSeconds(timeToWait);
 
         Invoke("SetItemAvailable", 1.0f);
