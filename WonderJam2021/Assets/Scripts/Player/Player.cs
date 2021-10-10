@@ -94,7 +94,10 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
+        this.transform.parent = null;
+        DontDestroyOnLoad(this.gameObject);
         animator.SetBool("isDead", true);
+        
         isDead = true;
         Invoke("FadeIn", 1f);
         Invoke("Revive", 2f);

@@ -154,9 +154,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("MovingPlatform"))
+        if (collision.gameObject.CompareTag("MovingPlatform") && !playerStat.isDead)
         {
             this.transform.parent = collision.transform;
+        }
+        else
+        {
+            this.transform.parent = null;
         }
     }
 
