@@ -14,10 +14,7 @@ public class Wizard : EnemyBase
 
     public bool m_isFacingRight = true;
     private Vector2 m_direction = Vector2.right;
-    private GameObject audioManager;
-    private void Awake() {
-        audioManager = GameObject.Find("AudioManager");
-    }
+
     private void FixedUpdate()
     {
         if ((m_isFacingRight && m_direction == Vector2.left) || (!m_isFacingRight && m_direction == Vector2.right))

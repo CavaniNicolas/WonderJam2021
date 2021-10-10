@@ -7,7 +7,8 @@ public class EnemyBase : MonoBehaviour
     public int health;
     public int damage;
 
-    private GameObject audioManager;
+    public GameObject audioManager;
+
     private void Awake() {
         audioManager = GameObject.Find("AudioManager");
     }
