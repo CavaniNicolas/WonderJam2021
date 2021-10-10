@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
         }
         if(playerHealth == 0)
         {
+            audioManager.GetComponent<AudioManager>().PlayDeathSound();
             playerHealth = 0;
             Death();
         }
@@ -94,7 +95,6 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
-        audioManager.GetComponent<AudioManager>().PlayDeathSound();
         animator.SetBool("isDead", true);
         isDead = true;
         Invoke("FadeIn", 1f);
