@@ -8,12 +8,16 @@ public class IntroFromNPC : MonoBehaviour
     public GameObject[] itemToBuy;
     public GameObject NPCText;
 
-    private bool IntroDone = false;
+    public bool IntroDone = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if(IntroDone)
+        {
+            SetItemAvailable();
+        }
     }
 
     // Update is called once per frame
