@@ -36,6 +36,8 @@ public class Scissors : MonoBehaviour
         {
             Debug.Log("No Player Detected");
         }
+
+        Destroy(other.gameObject);
     }
 
     private void PlayEndCinematic()
