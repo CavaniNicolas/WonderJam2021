@@ -26,8 +26,18 @@ public class Ghost : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+
+    private void Start()
+    {
+        if (!player) {
+            Debug.Log("No Player in Ghost");
+        }
+    }
     private void Update()
     {
+
+        if (!player) { return; }
+
         if (player.GetComponent<PlayerMovement>().isFacingRight())
         {
             attackPos = new Vector3(player.transform.position.x + attackRange, player.transform.position.y, player.transform.position.z);
@@ -49,6 +59,7 @@ public class Ghost : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!player) { return; }
         //Follow player if not attacking
         if (!isAttacking)
         {
@@ -104,6 +115,7 @@ public class Ghost : MonoBehaviour
 
     void Attack()
     {
+        if (!player) { return; }
         if (player.GetComponent<PlayerMovement>().isFacingRight())
         {
             ghostSprite.flipX = false;
