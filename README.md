@@ -18,3 +18,7 @@ Made by :
 - Lucien Morcrette 
 
 - Florent Bogacz
+
+![alt text](https://github.com/TheoLoubet/WonderJam2021/blob/main/Screenshots/pres1.png?raw=true)
+![alt text](https://github.com/TheoLoubet/WonderJam2021/blob/main/Screenshots/pres2.png?raw=true)
+![alt text](https://github.com/TheoLoubet/WonderJam2021/blob/main/Screenshots/pres3.png?raw=true)
