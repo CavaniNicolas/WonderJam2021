@@ -10,14 +10,18 @@ public class DisplayTextNPC : MonoBehaviour
     public TMP_Text TextBox;
     private bool add;
     private GameObject player;
+
+    private float speakTimer = 3; 
+
     private void Awake() {
         player = GameObject.Find("Player");
         player.GetComponent<GetItem>().NPCDialog = this.gameObject;
     }
+    
     // Update is called once per frame
     private void Update() {
         timer += Time.deltaTime;
-        if(timer < 2)
+        if(timer < speakTimer)
         {
             
         }
@@ -70,5 +74,14 @@ public class DisplayTextNPC : MonoBehaviour
             add = true;
         }
         
+    }
+
+
+
+    public void DisplayExactTextOnBox(string text)
+    {
+        TextBox.text = text;
+        timer = 0;
+        add = true;
     }
 }

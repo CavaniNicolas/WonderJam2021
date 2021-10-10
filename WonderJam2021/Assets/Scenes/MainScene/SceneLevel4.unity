@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6479211303865839201, guid: 886d20898be0387429d5d09b15a49405, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6479211303865839201, guid: 886d20898be0387429d5d09b15a49405, type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 348148688}
   m_Layer: 0
   m_Name: Light 2D (3)
-  m_TagString: Untagged
+  m_TagString: ThunderLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,6 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 630200211}
   - component: {fileID: 630200210}
+  - component: {fileID: 630200212}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -398,6 +399,18 @@ Transform:
   m_Father: {fileID: 1511452159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &630200212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630200209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8ead109d9869a4bb5d73f441d4137c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &676743945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6732941517476810814, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6732941517476810814, guid: 7e6d782d6ad0cac4b9926f0934e0f6b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -468,11 +481,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3558483244666437688, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558483244666437688, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.11
       objectReference: {fileID: 0}
     - target: {fileID: 3558483244666437688, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7497969
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 3558483244666437688, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -520,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981453958616245158, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.31
+      value: -3.11
       objectReference: {fileID: 0}
     - target: {fileID: 6597594799137348514, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -606,7 +623,7 @@ GameObject:
   - component: {fileID: 975964693}
   m_Layer: 0
   m_Name: Light 2D (4)
-  m_TagString: Untagged
+  m_TagString: ThunderLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1022,7 +1039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1258,7 +1275,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1354,7 +1371,7 @@ GameObject:
   - component: {fileID: 1516923671}
   m_Layer: 0
   m_Name: Light 2D (2)
-  m_TagString: Untagged
+  m_TagString: ThunderLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,7 +1542,7 @@ GameObject:
   - component: {fileID: 1658822393}
   m_Layer: 0
   m_Name: Light 2D (5)
-  m_TagString: Untagged
+  m_TagString: ThunderLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1693,7 +1710,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8190154397686312865, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8190154397686312865, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1757,7 +1774,7 @@ GameObject:
   - component: {fileID: 1955479930}
   m_Layer: 0
   m_Name: Light 2D (1)
-  m_TagString: Untagged
+  m_TagString: ThunderLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1863,7 +1880,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6479211303865839201, guid: 886d20898be0387429d5d09b15a49405, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6479211303865839201, guid: 886d20898be0387429d5d09b15a49405, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2065,7 +2082,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1480940582800838026, guid: d65346b5bfa7c974181cf733d2a6fc0b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1480940582800838026, guid: d65346b5bfa7c974181cf733d2a6fc0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2187,7 +2204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3248609624624096285, guid: c592836cbb6f087489097da4cd8b478b, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3248609624624096285, guid: c592836cbb6f087489097da4cd8b478b, type: 3}
       propertyPath: m_LocalPosition.x

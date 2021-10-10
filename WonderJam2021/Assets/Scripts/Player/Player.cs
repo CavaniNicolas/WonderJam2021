@@ -12,18 +12,21 @@ public class Player : MonoBehaviour
     private float currentInvulnTime = 0f;
     public bool hasBeenDamaged = false;
     public Animator animator;
+    public GameUI gameUi;
 
     public bool isDead = false;
 
 
     //to know if the player already has items
-    public bool hasMinerHelmet;
-    public bool hasTorch;
-    public bool hasLeash;
-    public bool hasShoes;
-    public bool hasArmor;
-    public int hasPotion;
+
     private GameObject audioManager;
+    public bool hasMinerHelmet = false;
+    public bool hasTorch = false;
+    public bool hasLeash = false;
+    public bool hasShoes = false;
+    public bool hasArmor = false;
+    public int hasPotion = 0;
+
     private void Awake()
     {
         audioManager = GameObject.Find("AudioManager");
@@ -36,7 +39,9 @@ public class Player : MonoBehaviour
     }
 
     void Update() {
-        if(Input.GetButtonDown("usePotion"))
+        DontDestroyOnLoad(this.gameObject);
+
+        if (Input.GetButtonDown("usePotion"))
         {
             if(hasPotion > 0)
             {
@@ -69,11 +74,20 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         audioManager.GetComponent<AudioManager>().PlayHeroHit();
-        playerHealth -= damage;
-        hasBeenDamaged = true;
-        if (playerHealth <= 0)
+        if(playerHealth > 0)
         {
+            playerHealth -= damage;
+            hasBeenDamaged = true;
+            if(playerHealth < 0)
+            {
+                playerHealth = 0;
+            }
+        }
+        if(playerHealth == 0)
+        {
+            playerHealth = 0;
             Death();
         }
     }
@@ -82,6 +96,7 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("isDead", true);
         isDead = true;
+        Invoke("FadeIn", 1f);
         Invoke("Revive", 2f);
     }
 
@@ -108,5 +123,17 @@ public class Player : MonoBehaviour
         isDead = false;
         hasBeenDamaged = false;
         SceneManager.LoadScene("SceneOutsideNoPlayer");
+        this.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
+        FadeOut();
+    }
+
+    private void FadeIn()
+    {
+        gameUi.FadeIn();
+    }
+
+    private void FadeOut()
+    {
+        gameUi.FadeOut();
     }
 }
