@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1455125001}
+    - target: {fileID: 7395283374165011593, guid: 6c1ed1d745ce5da438e4130e99fa63f7, type: 3}
+      propertyPath: m_Name
+      value: ShoesLogo
+      objectReference: {fileID: 0}
     - target: {fileID: 7991283985994654360, guid: 6c1ed1d745ce5da438e4130e99fa63f7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4162,7 +4166,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 514baf4d047609c4bb3f98687570a8c5, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -4824,6 +4828,10 @@ PrefabInstance:
       propertyPath: gameUi
       value: 
       objectReference: {fileID: 414417060}
+    - target: {fileID: 1933780094757329393, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: currentCoins
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1971095459791714368, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_Enabled
       value: 1

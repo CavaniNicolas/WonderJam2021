@@ -18,12 +18,12 @@ public class Player : MonoBehaviour
 
 
     //to know if the player already has items
-    public bool hasMinerHelmet;
-    public bool hasTorch;
-    public bool hasLeash;
-    public bool hasShoes;
-    public bool hasArmor;
-    public int hasPotion;
+    public bool hasMinerHelmet = false;
+    public bool hasTorch = false;
+    public bool hasLeash = false;
+    public bool hasShoes = false;
+    public bool hasArmor = false;
+    public int hasPotion = 0;
 
     private void Awake()
     {
