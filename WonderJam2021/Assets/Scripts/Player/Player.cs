@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
     }
 
     private void Start() {
-        currentCoins = 0;
         playerHealth = maxPlayerHealth;
     }
 
@@ -74,19 +73,20 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-
-        audioManager.GetComponent<AudioManager>().PlayHeroHit();
+        
         if(playerHealth > 0)
         {
             playerHealth -= damage;
             hasBeenDamaged = true;
-            if(playerHealth < 0)
+            audioManager.GetComponent<AudioManager>().PlayHeroHit();
+            if (playerHealth < 0)
             {
                 playerHealth = 0;
             }
         }
         if(playerHealth == 0)
         {
+            audioManager.GetComponent<AudioManager>().PlayDeathSound();
             playerHealth = 0;
             Death();
         }
@@ -109,6 +109,11 @@ public class Player : MonoBehaviour
                 if (collision.gameObject.CompareTag("Enemy"))
                 {
                     TakeDamage(collision.gameObject.GetComponent<EnemyBase>().damage);
+                    hasBeenDamaged = true;
+                }
+                if (collision.gameObject.CompareTag("Spikes"))
+                {
+                    TakeDamage(collision.gameObject.GetComponent<Spikes>().m_damage);
                     hasBeenDamaged = true;
                 }
             }

@@ -1099,7 +1099,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8190154397686312864, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190154397686312864, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190154397686312864, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -900471499
       objectReference: {fileID: 0}
     - target: {fileID: 8190154397686312865, guid: 7dd64bc6dd47cff4392e821e0036207f, type: 3}
       propertyPath: m_RootOrder
@@ -4885,13 +4893,25 @@ PrefabInstance:
       propertyPath: ghost
       value: 
       objectReference: {fileID: 1865177460}
+    - target: {fileID: 1127339456425718058, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127339456425718058, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333138403661648589, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.81
+      objectReference: {fileID: 0}
     - target: {fileID: 1933780094757329393, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: gameUi
       value: 
       objectReference: {fileID: 414417060}
     - target: {fileID: 1933780094757329393, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: currentCoins
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1971095459791714368, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_Enabled
@@ -4901,10 +4921,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 3049662225637958297, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3115888861623029542, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: director
       value: 
       objectReference: {fileID: 1705506625}
+    - target: {fileID: 8050781750099250055, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8115970952918828369, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_SortingLayer
       value: 3
