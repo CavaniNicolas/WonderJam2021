@@ -70,7 +70,8 @@ public class Player : MonoBehaviour
     {
         playerHealth -= damage;
         hasBeenDamaged = true;
-        if(playerHealth <= 0)
+
+        if (playerHealth <= 0)
         {
             Death();
         }
