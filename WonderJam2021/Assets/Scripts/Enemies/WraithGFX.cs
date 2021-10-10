@@ -17,6 +17,7 @@ public class WraithGFX : EnemyBase
     // Update is called once per frame
     void Update()
     {
+        //wraith orientation
         if (m_aiPath.desiredVelocity.x >= 0.01f)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
