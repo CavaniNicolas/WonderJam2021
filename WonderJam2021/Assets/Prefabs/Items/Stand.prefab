@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Torch
-  itemCost: 10
+  itemCost: 40
 --- !u!1 &1537128511856560491
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Armor
-  itemCost: 10
+  itemCost: 50
 --- !u!1 &1537128512108445476
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Miner_helmet
-  itemCost: 10
+  itemCost: 40
 --- !u!1 &1537128512389844389
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Electric_leash
-  itemCost: 10
+  itemCost: 60
 --- !u!1 &1537128512615087225
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Shoes
-  itemCost: 10
+  itemCost: 100
 --- !u!1 &5178962577128338895
 GameObject:
   m_ObjectHideFlags: 0

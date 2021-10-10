@@ -39,37 +39,37 @@ public class DisplayTextNPC : MonoBehaviour
     {
         if(text == "Torch")
         {
-            TextBox.text = "You need light around you ? \n only 40 golds and it's for ya";
+            TextBox.text = "You need light around you ? \n only 40 coins and it's for ya";
             timer = 0;
             add = true;
         }
         else if(text == "Shoes")
         {
-            TextBox.text = "That's legendary Boots. \n You can jump in air with that. 100 Golds !!";
+            TextBox.text = "That's legendary Boots. \n You can jump in air with that. 100 coins !!";
             timer = 0;
             add = true;
         }
         else if(text == "Potion")
         {
-            TextBox.text = "Small pot for ya ? 10 golds each";
+            TextBox.text = "Small potion for ya ? 10 coins each";
             timer = 0;
             add = true;
         }
         else if(text == "Electric_leash")
         {
-            TextBox.text = "Want to tame your monster with force, i see.\n 60 golds to do that.";
+            TextBox.text = "Want to increase the power of your link with the Ghost, i see.\n It will make killing monster easier, 60 golds to do that.";
             timer = 0;
             add = true;
         }
         else if(text == "Armor")
         {
-            TextBox.text = "You aren't strong enough to not need armor ? 30 golds";
+            TextBox.text = "You need armor for more durability ? 50 golds";
             timer = 0;
             add = true;
         }
         else if(text == "Miner_helmet")
         {
-            TextBox.text = "frontlight ? 40 golds.";
+            TextBox.text = "A nice light to see in front of you ? 40 golds.";
             timer = 0;
             add = true;
         }

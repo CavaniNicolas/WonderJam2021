@@ -164,9 +164,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.18
+  m_FalloffIntensity: 0.255
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000089bf6abf553cb7367f108e1c4354c3aa
@@ -213,10 +213,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 0
-  m_PointLightOuterAngle: 27.72
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 17.939741
+  m_PointLightInnerAngle: 4.542587
+  m_PointLightOuterAngle: 32.26256
+  m_PointLightInnerRadius: 0.2
+  m_PointLightOuterRadius: 18
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.32
   m_Color: {r: 0.6037736, g: 0.15588883, b: 0.093983635, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000004354c3aa89bf6abf553cb736194875817f108e1c
@@ -720,8 +720,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 179.8
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.8028097
+  m_PointLightInnerRadius: 5
+  m_PointLightOuterRadius: 6
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -944,10 +944,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e450e63c252133e4887b8a9703bcc96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCoins: 0
+  currentCoins: 20
   maxPlayerHealth: 3
   playerHealth: 0
-  invulnTime: 3
+  invulnTime: 1
   hasBeenDamaged: 0
   animator: {fileID: 5179217699263055601}
   gameUi: {fileID: 0}
