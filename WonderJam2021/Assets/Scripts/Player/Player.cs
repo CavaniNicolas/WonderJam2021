@@ -23,9 +23,10 @@ public class Player : MonoBehaviour
     public bool hasShoes;
     public bool hasArmor;
     public int hasPotion;
-
+    private GameObject audioManager;
     private void Awake()
     {
+        audioManager = GameObject.Find("AudioManager");
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
         {
             if(hasPotion > 0)
             {
+                audioManager.GetComponent<AudioManager>().PlayPotionSound();
                 hasPotion -= 1;
                 playerHealth = maxPlayerHealth;
             }
@@ -67,6 +69,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        audioManager.GetComponent<AudioManager>().PlayHeroHit();
         playerHealth -= damage;
         hasBeenDamaged = true;
         if (playerHealth <= 0)

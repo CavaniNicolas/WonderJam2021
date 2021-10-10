@@ -21,8 +21,9 @@ public class Ghost : MonoBehaviour
     private Vector3 attackPos;
     private IEnumerator attackCoroutine;
     private bool attackCoroutineRunning = false;
-
+    private GameObject audioManager;
     private void Awake() {
+        audioManager = GameObject.Find("AudioManager");
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -104,6 +105,7 @@ public class Ghost : MonoBehaviour
 
     void Attack()
     {
+        audioManager.GetComponent<AudioManager>().PlayPhantomSound();
         if (player.GetComponent<PlayerMovement>().isFacingRight())
         {
             ghostSprite.flipX = false;

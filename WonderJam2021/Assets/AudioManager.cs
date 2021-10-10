@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     public void PlayPhantomSound()
     {
         //2
-        audioSource[2].Play();
+        audioSource[2].PlayDelayed(-3f);
     }
     public void PlayFireballSound()
     {
@@ -60,5 +60,17 @@ public class AudioManager : MonoBehaviour
     {
         //4
         audioSource[4].Play();
+    }
+    public void PlayOpenChestSound()
+    {
+        audioSource[10].Play();
+    }
+    public void PlayBagSound()
+    {
+        audioSource[11].Play();
+    }
+    public void PlayDenieSound()
+    {
+        audioSource[12].Play();
     }
 }

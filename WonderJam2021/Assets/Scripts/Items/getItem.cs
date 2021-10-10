@@ -12,9 +12,11 @@ public class GetItem : MonoBehaviour
     public GameObject text;
     public GameObject NPCDialog;
     public Sprite openedChestSprite;
+    private GameObject audioManager;
 
     void Awake() {
         NPCDialog = GameObject.Find("Dialog NPC");
+        audioManager = GameObject.Find("AudioManager");
     }
 
     void Update() {
@@ -81,6 +83,7 @@ public class GetItem : MonoBehaviour
                 
                 if (cost <= coins)
                 {
+                    audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasMinerHelmet = true;
                     player.GetComponent<GestionItem>().BuyHelmet();
                     coins -= cost;
@@ -89,6 +92,7 @@ public class GetItem : MonoBehaviour
                 }
                 else
                 {
+                    audioManager.GetComponent<AudioManager>().PlayDenieSound();
                     DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
@@ -101,6 +105,7 @@ public class GetItem : MonoBehaviour
                 
                 if (cost <= coins)
                 {
+                    audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasTorch = true;
                     player.GetComponent<GestionItem>().BuyTorch();
                     coins -= cost;
@@ -109,6 +114,7 @@ public class GetItem : MonoBehaviour
                 }
                 else
                 {
+                    audioManager.GetComponent<AudioManager>().PlayDenieSound();
                     DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
@@ -121,6 +127,7 @@ public class GetItem : MonoBehaviour
                 
                 if (cost <= coins)
                 {
+                    audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasLeash = true;
                     player.GetComponent<GestionItem>().BuyLeash();
                     coins -= cost;
@@ -129,6 +136,7 @@ public class GetItem : MonoBehaviour
                 }
                 else
                 {
+                    audioManager.GetComponent<AudioManager>().PlayDenieSound();
                     DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
@@ -141,6 +149,7 @@ public class GetItem : MonoBehaviour
                 
                 if (cost <= coins)
                 {
+                    audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasArmor = true;
                     player.GetComponent<GestionItem>().BuyArmor();
                     coins -= cost;
@@ -149,6 +158,7 @@ public class GetItem : MonoBehaviour
                 }
                 else
                 {
+                    audioManager.GetComponent<AudioManager>().PlayDenieSound();
                     DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
@@ -161,6 +171,7 @@ public class GetItem : MonoBehaviour
                 
                 if (cost <= coins)
                 {
+                    audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasShoes = true;
                     player.GetComponent<GestionItem>().BuyBoots();
                     coins -= cost;
@@ -169,6 +180,7 @@ public class GetItem : MonoBehaviour
                 }
                 else
                 {
+                    audioManager.GetComponent<AudioManager>().PlayDenieSound();
                     DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
@@ -181,18 +193,21 @@ public class GetItem : MonoBehaviour
                 
                 if (cost <= coins)
                 {
+                    audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasPotion += 1;
                     coins -= cost;
                     DisplayText("I bought a pot !");
                 }
                 else
                 {
+                    audioManager.GetComponent<AudioManager>().PlayDenieSound();
                     DisplayText("Not enough Gold");
                 }
                 player.GetComponent<Player>().setCoins(coins);
             }
             else if (player.GetComponent<Player>().hasPotion >= 3)
             {
+                audioManager.GetComponent<AudioManager>().PlayDenieSound();
                 DisplayText("I already have enough of these in my pocket");
             }
         }
@@ -203,6 +218,7 @@ public class GetItem : MonoBehaviour
     }
     void OpenChest()
     {
+        audioManager.GetComponent<AudioManager>().PlayOpenChestSound();
         int coinsGet = Random.Range(10, 21);
         int currentcoins = player.GetComponent<Player>().getCoins();
         currentcoins += coinsGet;
