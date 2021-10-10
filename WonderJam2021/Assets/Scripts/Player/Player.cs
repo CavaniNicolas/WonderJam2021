@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     }
 
     void Update() {
-        DontDestroyOnLoad(this.gameObject);
 
         if (Input.GetButtonDown("usePotion"))
         {
