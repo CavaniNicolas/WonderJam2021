@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void GroundedCheck() // Check si le player est sur le sol avec un BoxCast
     {
-        RaycastHit2D hit = Physics2D.BoxCast(groundCheck.position, new Vector2(capsuleColliderComponent.size.x, 0.1f), 0.0f, Vector2.down, 0f, platformMask);
+        RaycastHit2D hit = Physics2D.BoxCast(groundCheck.position, new Vector2(capsuleColliderComponent.size.x * 0.8f, 0.1f), 0.0f, Vector2.down, 0f, platformMask);
 
         if (hit.collider != null)
         {
