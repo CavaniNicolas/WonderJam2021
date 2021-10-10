@@ -26,6 +26,11 @@ public class GameUI : MonoBehaviour
 
     void Update()
     {
+        if(player == null)
+        {
+            this.gameObject.SetActive(false);
+        }
+
         // pour recuperer la main camera quand on change de scene
         this.gameObject.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").gameObject.GetComponent<Camera>();
 

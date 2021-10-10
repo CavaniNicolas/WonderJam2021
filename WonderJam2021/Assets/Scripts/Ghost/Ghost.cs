@@ -37,13 +37,15 @@ public class Ghost : MonoBehaviour
 
     private void Start()
     {
-        if (!player) {
+        if (player == null) {
             Debug.Log("No Player in Ghost");
         }
     }
     private void Update()
     {
-        if (timeUntilNextAttack > 0)
+        if (player != null)
+        {
+            if (timeUntilNextAttack > 0)
         {
             timeUntilNextAttack -= Time.deltaTime;
         }
@@ -65,6 +67,8 @@ public class Ghost : MonoBehaviour
             {
                 Attack();
             }
+        }
+
         }
     }
 

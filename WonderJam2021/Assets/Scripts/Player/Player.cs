@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
 
     public bool isDead = false;
 
+    public GameObject Ghost;
+    public GameObject Rope;
+
 
     //to know if the player already has items
 
@@ -30,6 +33,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.Find("AudioManager");
+        Ghost = GameObject.Find("Ghost");
+        Rope = GameObject.Find("Rope");
+
         DontDestroyOnLoad(this.gameObject);
     }
 

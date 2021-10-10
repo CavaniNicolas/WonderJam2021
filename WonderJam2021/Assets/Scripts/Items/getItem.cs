@@ -196,7 +196,7 @@ public class GetItem : MonoBehaviour
                     audioManager.GetComponent<AudioManager>().PlayBagSound();
                     player.GetComponent<Player>().hasPotion += 1;
                     coins -= cost;
-                    DisplayText("I bought a pot !");
+                    DisplayText("I bought a potion !");
                 }
                 else
                 {

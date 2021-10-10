@@ -37,6 +37,9 @@ public class Scissors : MonoBehaviour
             Debug.Log("No Player Detected");
         }
 
+        Destroy(other.gameObject.GetComponent<Player>().Ghost);
+        Destroy(other.gameObject.GetComponent<Player>().Rope);
+
         Destroy(other.gameObject);
     }
 

@@ -54,8 +54,8 @@ public class CameraFollowPlayer : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         // Adjust camera position to player position
 
-        float smoothedPosition_X = Mathf.Max(-20, Mathf.Min(20, smoothedPosition.x));
-        float smoothedPosition_Y = Mathf.Max(-20, Mathf.Min(20, smoothedPosition.y));
+        float smoothedPosition_X = Mathf.Max(-50, Mathf.Min(50, smoothedPosition.x));
+        float smoothedPosition_Y = Mathf.Max(-50, Mathf.Min(50, smoothedPosition.y));
 
         this.transform.position = new Vector3(smoothedPosition_X, smoothedPosition_Y, -50.0f);
     }

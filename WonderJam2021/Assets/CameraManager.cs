@@ -16,6 +16,11 @@ public class CameraManager : MonoBehaviour
     void FixedUpdate()
     {
         m_player = GameObject.Find("Player").GetComponent<Player>();
+        if (m_player == null)
+        {
+            this.gameObject.SetActive(false);
+        }
+
         m_camera = GameObject.Find("Main Camera").GetComponent<CameraFollowPlayer>();
 
         if (m_player.isDead)
