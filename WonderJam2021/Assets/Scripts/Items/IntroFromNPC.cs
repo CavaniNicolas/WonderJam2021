@@ -48,7 +48,6 @@ public class IntroFromNPC : MonoBehaviour
 
     public void SetItemAvailable()
     {
-        Debug.Log("Invoke");
         foreach (GameObject item in itemToBuy)
         {
             item.GetComponent<BoxCollider2D>().enabled = true;
