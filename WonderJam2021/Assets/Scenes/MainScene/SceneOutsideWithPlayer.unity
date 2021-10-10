@@ -4954,6 +4954,10 @@ PrefabInstance:
       propertyPath: gameUi
       value: 
       objectReference: {fileID: 414417060}
+    - target: {fileID: 1933780094757329393, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: currentCoins
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1971095459791714368, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_Enabled
       value: 1
