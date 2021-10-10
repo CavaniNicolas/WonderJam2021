@@ -31,14 +31,14 @@ public class Thunder : MonoBehaviour
         //add thundersound
         foreach (GameObject Light in thunderLight)
         {
-            Light.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 1f;
+            Light.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 1.3f;
         }
     }
     void UnLitThunder()
     {
         foreach (GameObject Light in thunderLight)
         {
-            Light.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0.2f;
+            Light.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0.3f;
         }
     }
 }
