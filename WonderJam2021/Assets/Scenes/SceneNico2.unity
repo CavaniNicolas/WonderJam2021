@@ -787,7 +787,7 @@ Transform:
   m_LocalScale: {x: 7, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &897230297
 Rigidbody2D:
@@ -906,7 +906,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3558483244666437688, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3558483244666437688, guid: 0e469eda29dccd045aa32882a31b7ccd, type: 3}
       propertyPath: m_LocalPosition.x

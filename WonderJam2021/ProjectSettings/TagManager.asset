@@ -11,6 +11,7 @@ TagManager:
   - Ghost
   - Enemy
   - Projectile
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
