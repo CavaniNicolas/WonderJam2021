@@ -11,6 +11,8 @@ TagManager:
   - Ghost
   - Enemy
   - Projectile
+  - MovingPlatform
+  - Spikes
   layers:
   - Default
   - TransparentFX
