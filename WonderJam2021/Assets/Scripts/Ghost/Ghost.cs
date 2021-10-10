@@ -29,12 +29,21 @@ public class Ghost : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+
+    private void Start()
+    {
+        if (!player) {
+            Debug.Log("No Player in Ghost");
+        }
+    }
     private void Update()
     {
         if (timeUntilNextAttack > 0)
         {
             timeUntilNextAttack -= Time.deltaTime;
         }
+
+        if (!player) { return; }
 
         if (player.GetComponent<PlayerMovement>().isFacingRight())
         {
@@ -57,6 +66,7 @@ public class Ghost : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!player) { return; }
         //Follow player if not attacking
         if (!isAttacking)
         {
@@ -113,6 +123,9 @@ public class Ghost : MonoBehaviour
     void Attack()
     {
         audioManager.GetComponent<AudioManager>().PlayPhantomSound();
+        
+        if (!player) { return; }
+
         if (player.GetComponent<PlayerMovement>().isFacingRight())
         {
             ghostSprite.flipX = false;
