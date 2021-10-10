@@ -9,7 +9,8 @@ public class EndSceneMenu : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        SceneManager.LoadScene("OtherSceneName", LoadSceneMode.Additive);
+        Debug.Log("Open MainMenu");
+        SceneManager.LoadScene("SceneMainMenu");
 
     }
 }
