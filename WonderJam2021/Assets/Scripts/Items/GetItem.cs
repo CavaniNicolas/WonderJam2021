@@ -225,5 +225,6 @@ public class GetItem : MonoBehaviour
         player.GetComponent<Player>().setCoins(currentcoins);
         DisplayText("+ "+ coinsGet + " Golds");
         chestToOpen.GetComponent<SpriteRenderer>().sprite = openedChestSprite;
+        chestToOpen.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
