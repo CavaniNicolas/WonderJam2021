@@ -43,12 +43,13 @@ public class Spikes : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
             // damage the player if he touches the spikes
-            collision.gameObject.GetComponent<Player>().TakeDamage(m_damage);
-        }
-    }
+    //        collision.gameObject.GetComponent<Player>().TakeDamage(m_damage);
+    //    }
+    //}
+    //the player is doing that now
 }

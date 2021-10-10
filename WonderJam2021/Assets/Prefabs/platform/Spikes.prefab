@@ -156,6 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_collider2D: {fileID: 3864625263046597637}
   m_sprite: {fileID: 3864625262955888936}
-  m_damage: 3
+  m_damage: 2
   m_cooldown: 2
   m_lastingTime: 1

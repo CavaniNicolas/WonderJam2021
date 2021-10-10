@@ -73,4 +73,12 @@ public class AudioManager : MonoBehaviour
     {
         audioSource[12].Play();
     }
+    public void PlayStep1()
+    {
+        audioSource[13].Play();
+    }
+    public void PlayStep2()
+    {
+        audioSource[14].Play();
+    }
 }
