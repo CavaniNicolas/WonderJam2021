@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Ghost : MonoBehaviour
 {
@@ -26,7 +27,11 @@ public class Ghost : MonoBehaviour
     private GameObject audioManager;
     private void Awake() {
         audioManager = GameObject.Find("AudioManager");
-        DontDestroyOnLoad(this.gameObject);
+        if(SceneManager.GetActiveScene().name != "SceneMainMenu")
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        
     }
 
 

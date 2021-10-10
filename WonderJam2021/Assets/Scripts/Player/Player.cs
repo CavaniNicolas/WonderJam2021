@@ -74,13 +74,13 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-
-        audioManager.GetComponent<AudioManager>().PlayHeroHit();
+        
         if(playerHealth > 0)
         {
             playerHealth -= damage;
             hasBeenDamaged = true;
-            if(playerHealth < 0)
+            audioManager.GetComponent<AudioManager>().PlayHeroHit();
+            if (playerHealth < 0)
             {
                 playerHealth = 0;
             }
@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
+        audioManager.GetComponent<AudioManager>().PlayDeathSound();
         animator.SetBool("isDead", true);
         isDead = true;
         Invoke("FadeIn", 1f);
