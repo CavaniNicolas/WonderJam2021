@@ -68,8 +68,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
-
-        if(playerHealth <= 0)
+        hasBeenDamaged = true;
+        if (playerHealth <= 0)
         {
             Death();
         }
