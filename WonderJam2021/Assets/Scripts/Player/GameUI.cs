@@ -18,6 +18,9 @@ public class GameUI : MonoBehaviour
 
     void Update()
     {
+        // pour recuperer la main camera quand on change de scene
+        this.gameObject.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").gameObject.GetComponent<Camera>();
+
         HealthText.text = player.GetComponent<Player>().playerHealth.ToString();
         PotionText.text = player.GetComponent<Player>().hasPotion.ToString();
         GoldText.text = player.GetComponent<Player>().getCoins().ToString();

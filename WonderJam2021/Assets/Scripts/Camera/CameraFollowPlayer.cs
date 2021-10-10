@@ -9,14 +9,17 @@ public class CameraFollowPlayer : MonoBehaviour
     public float maxX = 20;
     public float minX = 0;
 
-    [Range(0, 100)]
-    public int currentStage = 0;
+    public bool m_canFollowY = false;
+
+    public float maxY = 20;
+    public float minY = 0;
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
+        if(!player)
+            Debug.Log("player not found");
     }
-
 
     void FixedUpdate()
     {
@@ -24,8 +27,17 @@ public class CameraFollowPlayer : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         // Adjust camera position to player position
 
-        float smoothedPosition_X  = Mathf.Max(minX, Mathf.Min(maxX, smoothedPosition.x));
-        this.transform.position = new Vector3(smoothedPosition_X, 0.0f, -50.0f);
+        float smoothedPosition_X = Mathf.Max(minX, Mathf.Min(maxX, smoothedPosition.x));
+        float smoothedPosition_Y = 0.0f;
+
+        if (m_canFollowY)
+        {
+            smoothedPosition_Y = Mathf.Max(minY, Mathf.Min(maxY, smoothedPosition.y));
+
+        }
+
+        this.transform.position = new Vector3(smoothedPosition_X, smoothedPosition_Y, -50.0f);
         
+
     }
 }
