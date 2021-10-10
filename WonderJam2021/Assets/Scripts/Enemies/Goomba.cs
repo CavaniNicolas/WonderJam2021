@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Goomba : EnemyBase
 {
-    public SpriteRenderer sprite;
 
     public GameObject platformLeft;
     public GameObject platformRight;

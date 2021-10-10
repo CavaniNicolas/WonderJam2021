@@ -263,6 +263,7 @@ MonoBehaviour:
   moveSpeed: 0.125
   attackRange: 4
   damage: 1
+  attackRate: 0.75
   ghostSprite: {fileID: 3284692858977512007}
 --- !u!58 &2556592943633645347
 CircleCollider2D:

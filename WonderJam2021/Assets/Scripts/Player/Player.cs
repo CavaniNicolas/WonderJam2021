@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private float currentInvulnTime = 0f;
     public bool hasBeenDamaged = false;
     public Animator animator;
+    public GameUI gameUi;
 
     public bool isDead = false;
 
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
-
+        hasBeenDamaged = true;
         if(playerHealth <= 0)
         {
             Death();
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("isDead", true);
         isDead = true;
+        Invoke("FadeIn", 1f);
         Invoke("Revive", 2f);
     }
 
@@ -105,5 +107,16 @@ public class Player : MonoBehaviour
         isDead = false;
         hasBeenDamaged = false;
         SceneManager.LoadScene("SceneOutsideNoPlayer");
+        FadeOut();
+    }
+
+    private void FadeIn()
+    {
+        gameUi.FadeIn();
+    }
+
+    private void FadeOut()
+    {
+        gameUi.FadeOut();
     }
 }
