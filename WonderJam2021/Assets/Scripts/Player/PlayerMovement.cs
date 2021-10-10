@@ -23,9 +23,14 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalnput;
     private bool isGrounded = true;
     private bool m_FacingRight = true; // ou le personnage regarde
+    private GameObject audioManager;
+    private float timer = 0f;
+    private float timeBetweenFootStep = 0.3f;
+    private bool stepCount;
 
     void Awake()
     {
+        audioManager = GameObject.Find("AudioManager");
         rigidBodyComponent = GetComponent<Rigidbody2D>(); // On recupere le rigidbody du player
         capsuleColliderComponent = GetComponent<CapsuleCollider2D>(); // On recupere le capsule collider du player
     }
@@ -66,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate is called every physics update
     private void FixedUpdate()
     {
+        timer += Time.deltaTime;
         GroundedCheck();
         // Saut
         if (isJumpKeyPressed && jumpsCount > 0 && (isGrounded || this.gameObject.GetComponent<Player>().hasShoes) )
@@ -82,7 +88,24 @@ public class PlayerMovement : MonoBehaviour
 
         // D�placement horizontal
         rigidBodyComponent.velocity = new Vector2(horizontalnput * moveSpeed * 10f * Time.fixedDeltaTime, rigidBodyComponent.velocity.y);
+        if (rigidBodyComponent.velocity.sqrMagnitude > 0 && isGrounded == true)
+        {
+            if (timer > timeBetweenFootStep)
+            {
+                timer = 0;
+                if (stepCount)
+                {
+                    audioManager.GetComponent<AudioManager>().PlayStep1();
+                    stepCount = false;
+                }
+                else
+                {
+                    audioManager.GetComponent<AudioManager>().PlayStep2();
+                    stepCount = true;
+                }
 
+            }
+        }
         // Reset jump input
         isJumpKeyPressed = false;
     }

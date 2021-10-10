@@ -112,6 +112,11 @@ public class Player : MonoBehaviour
                     TakeDamage(collision.gameObject.GetComponent<EnemyBase>().damage);
                     hasBeenDamaged = true;
                 }
+                if (collision.gameObject.CompareTag("Spikes"))
+                {
+                    TakeDamage(collision.gameObject.GetComponent<Spikes>().m_damage);
+                    hasBeenDamaged = true;
+                }
             }
 
         }
