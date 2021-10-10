@@ -36,7 +36,9 @@ public class Player : MonoBehaviour
     }
 
     void Update() {
-        if(Input.GetButtonDown("usePotion"))
+        DontDestroyOnLoad(this.gameObject);
+
+        if (Input.GetButtonDown("usePotion"))
         {
             if(hasPotion > 0)
             {
@@ -68,11 +70,18 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        playerHealth -= damage;
-        hasBeenDamaged = true;
-
-        if (playerHealth <= 0)
+        if(playerHealth > 0)
         {
+            playerHealth -= damage;
+            hasBeenDamaged = true;
+            if(playerHealth < 0)
+            {
+                playerHealth = 0;
+            }
+        }
+        if(playerHealth == 0)
+        {
+            playerHealth = 0;
             Death();
         }
     }
@@ -108,6 +117,7 @@ public class Player : MonoBehaviour
         isDead = false;
         hasBeenDamaged = false;
         SceneManager.LoadScene("SceneOutsideNoPlayer");
+        this.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
         FadeOut();
     }
 

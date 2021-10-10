@@ -480,6 +480,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &367012899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1157815494732883738, guid: 6c1ed1d745ce5da438e4130e99fa63f7, type: 3}
+  m_PrefabInstance: {fileID: 8002468136833455319}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0353cef5eb14a244ae9e0199a33c03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &485163635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -495,6 +506,10 @@ PrefabInstance:
       propertyPath: ghost
       value: 
       objectReference: {fileID: 826322692}
+    - target: {fileID: 1933780094757329393, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
+      propertyPath: gameUi
+      value: 
+      objectReference: {fileID: 367012899}
     - target: {fileID: 5950413676514412474, guid: 35719bde2970d7444b5296638e8f801d, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1290,11 +1305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.472366
+      value: -9.08
       objectReference: {fileID: 0}
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.96155643
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 3887299062558899936, guid: 6f20a8577bd355f4cb09954d01b365f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1536,6 +1551,42 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[20].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_Data
+      value: 
+      objectReference: {fileID: -8638708705063248496, guid: aba86ff8762adab4c8edfb97a54fe60e, type: 3}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[22].m_Data
+      value: 
+      objectReference: {fileID: 5845545263380224672, guid: aba86ff8762adab4c8edfb97a54fe60e, type: 3}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[23].m_Data
+      value: 
+      objectReference: {fileID: -4082408385632893645, guid: aba86ff8762adab4c8edfb97a54fe60e, type: 3}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[20].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[23].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_Tiles.Array.data[1432].second.m_TileSpriteIndex
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_Tiles.Array.data[1475].second.m_TileSpriteIndex
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332596718659195056, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
+      propertyPath: m_Tiles.Array.data[1581].second.m_TileSpriteIndex
+      value: 21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e715f1212ae8d42927dc47ead21684, type: 3}
 --- !u!1001 &8002468136833455319
