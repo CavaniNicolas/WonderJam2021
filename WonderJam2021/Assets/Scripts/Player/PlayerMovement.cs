@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;       // utilise pour les animation
     public SpriteRenderer sprite;
-    public PlayableDirector director;
+    public PlayableDirector director;   // for intro cutscene
+
+    public bool CanPlay = true;     // use to stop input for director
 
     // private Variables
     private Rigidbody2D rigidBodyComponent;
@@ -42,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(director == null || director.state != PlayState.Playing)
+        if((director == null || director.state != PlayState.Playing ) && CanPlay)
         {
             if(!playerStat.isDead)
             {
