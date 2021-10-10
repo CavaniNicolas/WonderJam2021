@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 1933780094757329393}
   - component: {fileID: 5952762808336539267}
   - component: {fileID: 683788239812287574}
+  - component: {fileID: 6127296023539168778}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -930,6 +931,7 @@ MonoBehaviour:
   playerStat: {fileID: 1933780094757329393}
   animator: {fileID: 5179217699263055601}
   sprite: {fileID: 1971095459791714368}
+  director: {fileID: 0}
 --- !u!114 &1933780094757329393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +971,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8115970952918828374}
   text: {fileID: 5540495374046636970}
+  NPCDialog: {fileID: 0}
+  openedChestSprite: {fileID: 21300000, guid: caf6508e771316f48bcfdf90b0a757a0, type: 3}
 --- !u!114 &683788239812287574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,6 +992,25 @@ MonoBehaviour:
   upgradeDamageLeash: 3
   upgradeColorLeash: {r: 0, g: 255, b: 255, a: 1}
   upgradeArmorHealth: 6
+--- !u!95 &6127296023539168778
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115970952918828374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8161906075051490562
 GameObject:
   m_ObjectHideFlags: 0

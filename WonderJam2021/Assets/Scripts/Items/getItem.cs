@@ -11,6 +11,7 @@ public class GetItem : MonoBehaviour
     private GameObject chestToOpen;
     public GameObject text;
     public GameObject NPCDialog;
+    public Sprite openedChestSprite;
 
     void Awake() {
         NPCDialog = GameObject.Find("Dialog NPC");
@@ -207,6 +208,6 @@ public class GetItem : MonoBehaviour
         currentcoins += coinsGet;
         player.GetComponent<Player>().setCoins(currentcoins);
         DisplayText("+ "+ coinsGet + " Golds");
-        chestToOpen.SetActive(false);
+        chestToOpen.GetComponent<SpriteRenderer>().sprite = openedChestSprite;
     }
 }
