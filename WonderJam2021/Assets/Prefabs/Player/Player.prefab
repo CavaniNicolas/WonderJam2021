@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 917978197
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 393d19ee66f1a704cb196a74f153fe0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -298,7 +298,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2123020263
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.3301887, g: 0.15975511, b: 0.11992702, a: 1}
@@ -414,7 +414,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 917978197
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5421101034633263904
@@ -790,7 +790,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 917978197
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.4339623, g: 0.27682275, b: 0.18218228, a: 1}
@@ -950,6 +950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8115970952918828374}
   text: {fileID: 5540495374046636970}
+  NPCDialog: {fileID: 0}
+  openedChestSprite: {fileID: 21300000, guid: caf6508e771316f48bcfdf90b0a757a0, type: 3}
 --- !u!114 &683788239812287574
 MonoBehaviour:
   m_ObjectHideFlags: 0
