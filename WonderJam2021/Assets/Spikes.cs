@@ -16,13 +16,18 @@ public class Spikes : MonoBehaviour
     private float m_beginUpTime;
 
     private bool m_isUp;
-
+    private GameObject audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.Find("AudioManager");
+    }
     private void FixedUpdate()
     {
 
         // time the spikes should wait before next attack
         if (Time.realtimeSinceStartup - m_lastShotTime > m_cooldown && !m_isUp)
         {
+            audioManager.GetComponent<AudioManager>().PlaySpikeSound();
             m_collider2D.enabled = true;
             m_sprite.enabled = true;
 

@@ -81,4 +81,8 @@ public class AudioManager : MonoBehaviour
     {
         audioSource[14].Play();
     }
+    public void PlaySpikeSound()
+    {
+        audioSource[15].Play();
+    }
 }
