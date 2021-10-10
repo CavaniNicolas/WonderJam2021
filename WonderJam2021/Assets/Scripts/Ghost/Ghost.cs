@@ -7,6 +7,8 @@ public class Ghost : MonoBehaviour
     public float moveSpeed = 0.125f;
     public float attackRange = 4;
     public int damage;
+    public float attackRate = 0.75f;
+    private float timeUntilNextAttack = 0f;
 
     public SpriteRenderer ghostSprite;
 
@@ -28,6 +30,11 @@ public class Ghost : MonoBehaviour
 
     private void Update()
     {
+        if (timeUntilNextAttack > 0)
+        {
+            timeUntilNextAttack -= Time.deltaTime;
+        }
+
         if (player.GetComponent<PlayerMovement>().isFacingRight())
         {
             attackPos = new Vector3(player.transform.position.x + attackRange, player.transform.position.y, player.transform.position.z);
@@ -39,7 +46,7 @@ public class Ghost : MonoBehaviour
         
         if(!player.GetComponent<Player>().isDead)
         {
-            if (Input.GetButtonDown("Attack") && !attackCoroutineRunning)
+            if (Input.GetButtonDown("Attack") && !attackCoroutineRunning && timeUntilNextAttack <= 0)
             {
                 Attack();
             }
@@ -154,6 +161,7 @@ public class Ghost : MonoBehaviour
 
         isAttacking = false;
         attackCoroutineRunning = false;
+        timeUntilNextAttack = attackRate;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
