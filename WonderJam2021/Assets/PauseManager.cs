@@ -33,12 +33,14 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         m_pauseMenuCanvas.GetComponent<Canvas>().enabled = true;
+        m_gameIsPaused = true;
     }
 
-    void UnpauseGame()
+    public void UnpauseGame()
     {
         Time.timeScale = 1;
         m_pauseMenuCanvas.GetComponent<Canvas>().enabled = false;
+        m_gameIsPaused = false;
     }
     public void goToMenu()
     {
