@@ -11,6 +11,8 @@ public class EndSceneMenu : MonoBehaviour
     {
         Destroy(GameObject.Find("GameUI"));
         Destroy(GameObject.Find("AudioManager"));
+        Destroy(GameObject.Find("PauseManager"));
+
         Debug.Log("Open MainMenu");
         SceneManager.LoadScene("SceneMainMenu");
 

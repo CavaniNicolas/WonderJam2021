@@ -8,8 +8,15 @@ public class PauseManager : MonoBehaviour
     public static bool m_gameIsPaused;
     public GameObject m_pauseMenuCanvas;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Update()
     {
+        // to get main camera when the scene changes
+        this.gameObject.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").gameObject.GetComponent<Camera>();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             m_gameIsPaused = !m_gameIsPaused;
@@ -55,6 +62,7 @@ public class PauseManager : MonoBehaviour
         UnpauseGame();
 
         SceneManager.LoadScene("SceneMainMenu");
+        Destroy(this.gameObject);
     }
 
 }
